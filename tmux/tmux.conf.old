@@ -13,9 +13,6 @@ set-option -g allow-rename off
 # Enable mouse mode (tmux 2.1 and above)
 set -g mouse on
 
-#resize window
-set-window-option -g aggressive-resize
-
 # http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
 ######################
 ### DESIGN CHANGES ###
