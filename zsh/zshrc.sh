@@ -23,6 +23,12 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 	}
 	alias cd="c"
 
+	cl() {
+		clear;
+		ls;
+	}
+	alias clear_ls="cl"
+
 # For vim mappings: 
 	stty -ixon
 
