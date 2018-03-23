@@ -10,7 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required 
 Plugin 'VundleVim/Vundle.vim' 
 
-Bundle 'Valloric/YouCompleteMe'
+" Refuses to Compile and Run Properly Bundle 'Valloric/YouCompleteMe'
 
 
 " The following are examples of different formats supported. 
