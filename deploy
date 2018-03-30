@@ -98,5 +98,11 @@ mkdir -p ~/.vim
 cp "$HOME/dotfiles/vim/autoload" > ~/.vim/
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
+mkdir -p ~/.fonts
+cp -r "$HOME/dotfiles/fonts/*" > ~/.fonts/
+cp "$HOME/dotfiles/fonts/*" > ~/.fonts/
+
+printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
+
 echo
 echo "Please log out and log back in for default shell to be initialized."
