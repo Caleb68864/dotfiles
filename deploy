@@ -95,7 +95,8 @@ fi
 printf "source '$HOME/dotfiles/zsh/zshrc_manager.sh'" > ~/.zshrc
 printf "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
 mkdir -p ~/.vim
-cp "$HOME/dotfiles/vim/autoload" > ~/.vim/
+cp -r "$HOME/dotfiles/vim/bundle"  ~/.vim/
+cp -r "$HOME/dotfiles/vim/fonts"  ~/.vim/
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
 mkdir -p ~/.fonts
