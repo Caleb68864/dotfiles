@@ -27,10 +27,10 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 		ls;
 	}
 	alias clear_ls="cl"
-	cl() {
+	t() {
 	    /opt/vc/bin/vcgencmd measure_temp
     }
-	alias temp="cl"
+	alias temp="t"
 
 # For vim mappings: 
 	stty -ixon
