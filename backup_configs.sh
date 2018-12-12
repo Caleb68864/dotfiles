@@ -2,7 +2,7 @@ mkdir -p ~/github/dotfiles/i3_config
 mkdir -p ~/github/dotfiles/i3_config/i3blocks
 mkdir -p ~/github/dotfiles/openbox_config
 mkdir -p ~/github/dotfiles/tint2_config
-mkdir -p ~/github/dotfiles/polybar_config
+mkdir -p ~/github/dotfiles/polybar
 mkdir -p ~/github/dotfiles/fonts
 mkdir -p ~/github/dotfiles/vim
 mkdir -p ~/github/dotfiles/bspwm
@@ -22,7 +22,7 @@ cp -r ~/.fonts/* ~/github/dotfiles/fonts
 cp ~/.vimrc ~/github/dotfiles/vim
 cp -r ~/.vim ~/github/dotfiles/vim
 
-git config --global user.email "i3@arch"
+git config --global user.email "bspwm@arch"
 git config --global user.name "Caleb Bennett"
 
 

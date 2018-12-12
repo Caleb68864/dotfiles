@@ -25,9 +25,9 @@ modules-left = bspwm xwindow
 modules-center = 
 modules-right = battery volume mpd spotify date powermenu
 
-;tray-position = right
-;tray-padding = 2
-;tray-background = #66333333
+tray-position = right
+tray-padding = 2
+tray-background = #66333333
 
 wm-restack = bspwm
 
@@ -153,7 +153,8 @@ type = internal/volume
 format-volume = <ramp-volume>  <label-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
-label-muted =   muted
+;label-muted =   muted
+label-muted = 
 label-muted-foreground = #aaa
 format-volume-padding = 3
 format-muted-padding = 3
@@ -163,8 +164,8 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-headphones-0 = 
 
-[module/spotify]
-type = custom/script
+;[module/spotify]
+;type = custom/script
 
 ;exec = /home/gamehelp16/Documents/np
 ;interval = 1
