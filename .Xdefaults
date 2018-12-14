@@ -51,6 +51,8 @@ URxvt*color13:   #fb4cb3
 URxvt*color14:   #8be9fd
 URxvt*color15:   #ededec
 
+URxvt.font: xft:dejavu:size:10
+URxvt.letterSpace: -4
 URxvt.perl-ext-common: default
 
 
