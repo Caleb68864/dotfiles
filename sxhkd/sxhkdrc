@@ -11,7 +11,7 @@ super + r
     rxvt-unicode -e ranger
 
 # start network manager
-super + w
+super + n 
     rxvt-unicode -e nmtui
 
 # start browser

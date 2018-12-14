@@ -51,6 +51,6 @@ URxvt*color13:   #fb4cb3
 URxvt*color14:   #8be9fd
 URxvt*color15:   #ededec
 
-URxvt.perl-ext-common: default, matcher
+URxvt.perl-ext-common: default
 
 
