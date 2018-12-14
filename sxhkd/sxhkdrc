@@ -6,9 +6,25 @@
 super + Return
     rxvt-unicode
 
-# GNOME System Monitor
+# start ranger
+super + r
+    rxvt-unicode -e ranger
+
+# start network manager
+super + w
+    rxvt-unicode -e nmtui
+
+# start browser
+super + shift + w
+    google-chrome-stable
+    
+# start Pithos
+super + shift + m
+    pithos
+    
+# Start HTOP
 ctrl + shift + Escape
-	gnome-system-monitor
+    rxvt-unicode -e htop
 
 # program launcher
 super + space
