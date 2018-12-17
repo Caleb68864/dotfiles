@@ -4,15 +4,18 @@
 
 # terminal emulator
 super + Return
-    rxvt-unicode
+    st
+    # rxvt-unicode
 
 # start ranger
 super + r
-    rxvt-unicode -e ranger
+    st -e ranger
+    # rxvt-unicode -e ranger
 
 # start network manager
 super + n 
-    rxvt-unicode -e nmtui
+    st -e nmtui
+    # rxvt-unicode -e nmtui
 
 # start browser
 super + shift + w
@@ -24,7 +27,8 @@ super + shift + m
     
 # Start HTOP
 ctrl + shift + Escape
-    rxvt-unicode -e htop
+    st -e htop
+    # rxvt-unicode -e htop
 
 # program launcher
 super + space
@@ -97,6 +101,9 @@ super + {_,shift + }c
 
 # focus the next/previous desktop
 super + bracket{left,right}
+	bspc desktop -f {prev,next}
+
+super + alt + {Left,Right}
 	bspc desktop -f {prev,next}
 
 # focus the last node/desktop
@@ -181,8 +188,8 @@ ctrl + shift + Print
 	notify-send "Screenshot copied to clipboard"
 
 # Lock Desktop
-super + shift + o
- 	/home/gamehelp16/Documents/lock.sh
+super + shift + o 
+    i3lock
 
 # VOLUME
 
