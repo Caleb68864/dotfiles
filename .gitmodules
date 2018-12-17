@@ -13,3 +13,12 @@
 [submodule "vim/plugged/YCM-Generator"]
     path = vim/plugged/YCM-Generator
     url = https://github.com/rdnetto/YCM-Generator
+[submodule "vim/plugged/nerdtree"]
+    path = vim/plugged/nerdtree
+    url = https://github.com/scrooloose/nerdtree
+[submodule "vim/plugged/ultisnips"]
+    path = vim/plugged/ultisnips
+    url = https://github.com/SirVer/ultisnips
+[submodule "vim/plugged/vim-easy-align"]
+    path = vim/plugged/vim-easy-align
+    url = https://github.com/junegunn/vim-easy-align
