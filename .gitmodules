@@ -9,4 +9,7 @@
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "st"]
 	path = st
-	url = https://github.com/LukeSmithxyz/st.git
+    url = https://github.com/LukeSmithxyz/st.git
+[submodule "vim/plugged/YCM-Generator"]
+    path = vim/plugged/YCM-Generator
+    url = https://github.com/rdnetto/YCM-Generator
