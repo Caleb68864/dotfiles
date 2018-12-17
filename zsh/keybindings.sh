@@ -1,3 +1,11 @@
+# ranger	
+function ranger() { 
+		BUFFER="ranger"
+		zle accept-line
+	}
+	zle -N ranger
+	bindkey "^r" ranger
+
 # up
 	function up_widget() {
 		BUFFER="cd .."
