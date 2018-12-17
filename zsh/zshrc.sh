@@ -27,6 +27,12 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 		ls;
 	}
 	alias clear_ls="cl"
+	rl() {
+		rm $1
+        clear;
+		ls;
+	}
+	alias rm_ls="rl"
 	t() {
 	    /opt/vc/bin/vcgencmd measure_temp
     }
