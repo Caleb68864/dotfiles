@@ -1,10 +1,12 @@
 # ranger	
-function ranger() { 
+function run_ranger() { 
 		BUFFER="ranger"
+		#zle reset-prompt
+		zle end-of-line
 		zle accept-line
 	}
-	zle -N ranger
-	bindkey "^r" ranger
+	zle -N run_ranger
+	bindkey "^f" run_ranger
 
 # up
 	function up_widget() {
