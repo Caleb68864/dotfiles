@@ -5,6 +5,9 @@ call plug#begin('~/dotfiles/vim/plugged')
 
 " Make sure you use single quotes
 
+" Markdown Plugin
+Plug 'gabrielelana/vim-markdown'
+
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
