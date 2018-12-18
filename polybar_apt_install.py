@@ -12,9 +12,9 @@ def run_cmd(cmd):
 apps = []
 apps.append("sudo apt install -y")
 apps.append("make")
-apps.append("cmake")
 apps.append("gcc")
-apps.append("libcairo2-dev")
+apps.append("build-essential")
+apps.append("cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev")
 run_cmd(" ".join(apps))
 
 #Clone st
