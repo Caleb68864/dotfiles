@@ -8,6 +8,9 @@ def run_cmd(cmd):
     except Exception as e:
         print(e)
 
+# update apt
+run_cmd("sudo apt update")
+
 # install required apps
 apps = []
 apps.append("sudo apt install -y")
@@ -24,6 +27,17 @@ apps.append("python")
 apps.append("python3")
 apps.append("python-pip")
 apps.append("python3-pip")
+apps.append("vim")
+apps.append("network-manager")
+apps.append("ranger")
+apps.append("feh")
+apps.append("w3m")
+apps.append("")
+
 run_cmd(" ".join(apps))
 
+# upgrade system
+run_cmd("sudo apt upgrade -y")
 
+# remove old packages from system
+run_cmd("sudo apt autoremove -y")
