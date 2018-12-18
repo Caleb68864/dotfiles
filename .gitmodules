@@ -19,6 +19,9 @@
 [submodule "vim/plugged/ultisnips"]
     path = vim/plugged/ultisnips
     url = https://github.com/SirVer/ultisnips
+[submodule "vim/plugged/vim-snippets"]
+    path = vim/plugged/vim-snippets
+    url = https://github.com/honza/vim-snippets
 [submodule "vim/plugged/vim-easy-align"]
     path = vim/plugged/vim-easy-align
     url = https://github.com/junegunn/vim-easy-align
