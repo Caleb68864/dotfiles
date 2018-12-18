@@ -22,3 +22,6 @@
 [submodule "vim/plugged/vim-easy-align"]
     path = vim/plugged/vim-easy-align
     url = https://github.com/junegunn/vim-easy-align
+[submodule "vim/plugged/vim-markdown"]
+    path = vim/plugged/vim-markdown
+    url = https://github.com/gabrielelana/vim-markdown
