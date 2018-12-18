@@ -100,8 +100,9 @@ cp -r "$HOME/dotfiles/vim/fonts"  ~/.vim/
 cp -r "$HOME/dotfiles/vim/autoload/"  ~/.vim/
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
-mkdir -p ~/.fonts
-cp -r "$HOME/dotfiles/fonts/*" > ~/.fonts/
+cp -r "$HOME/dotfiles/fonts" > ~/.fonts
+
+cp -r "$HOME/dotfiles/youtube-dl/" > ~/.config/
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
