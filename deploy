@@ -102,7 +102,6 @@ printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
 mkdir -p ~/.fonts
 cp -r "$HOME/dotfiles/fonts/*" > ~/.fonts/
-cp "$HOME/dotfiles/fonts/*" > ~/.fonts/
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
