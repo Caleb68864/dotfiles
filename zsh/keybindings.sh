@@ -10,7 +10,7 @@ function run_ranger() {
 
 # up
 	function up_widget() {
-		BUFFER="cd .."
+		BUFFER="cd .. && clear && ls"
 		zle accept-line
 	}
 	zle -N up_widget

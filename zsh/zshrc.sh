@@ -6,7 +6,10 @@
 
 # Aliases
 	alias v="vim -p"
-	
+    alias agi="sudo apt install"	
+    alias agu="sudo apt update && sudo apt upgrade && sudo apt autoremove"	
+    alias acs="apt-cache search"
+
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
