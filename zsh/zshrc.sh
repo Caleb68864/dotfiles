@@ -19,7 +19,13 @@
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
-	# Custom cd
+	# Add link to commute text file
+    add2commute() {
+        echo $1 >> /home/pi/Storage/Commute/Commute.txt;
+        #cat /home/pi/Storage/Commute/Commute.txt;
+    }
+    alias a2c="add2commute"
+    # Custom cd
 	c() {
 		cd $1;
 		ls;

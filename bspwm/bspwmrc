@@ -25,6 +25,7 @@ bspc rule -a rxvt-unicode desktop=^2
 bspc rule -a rxvt desktop=^2
 bspc rule -a URxvt desktop=^2
 bspc rule -a St desktop=^2
+bspc rule -a Xterm desktop=^2
 bspc rule -a Genymotion desktop=^3
 bspc rule -a TelegramDesktop desktop=^3
 bspc rule -a Subl desktop=^4
