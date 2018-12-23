@@ -25,6 +25,22 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
         #cat /home/pi/Storage/Commute/Commute.txt;
     }
     alias a2c="add2commute"
+    # Download Commute Playlist
+    download_playlist() {
+        python3 /home/pi/Scripts/get_commute.py;
+    }
+    alias dcp="download_playlist"
+    # Download Commute File
+    download_file() {
+        bash /home/pi/Scripts/commuteFile.sh;
+    }
+    alias dcf="download_file"
+    # Download Commute Playlist & File
+    download_both() {
+        download_playlist;
+        download_file;
+    }
+    alias dcb="download_both"
     # Custom cd
 	c() {
 		cd $1;
