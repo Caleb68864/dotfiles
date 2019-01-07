@@ -55,6 +55,9 @@ remove_apps = []
 apps.append("sudo apt remove")
 apps.append("jwm")
 apps.append("fluxbox")
+apps.append("rox-filer")
+apps.append("icewm")
+apps.append("spacefm")
 
 run_cmd(" ".join(remove_apps))
 
