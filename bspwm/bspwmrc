@@ -20,6 +20,7 @@ bspc desktop ^1 -l tiled
 bspc rule -a Gimp desktop=^8 state=floating follow=on
 bspc rule -a Google-chrome desktop=^1
 bspc rule -a Firefox desktop=^1
+bspc rule -a Firefox-esr desktop=^1
 bspc rule -a Terminator desktop=^2
 bspc rule -a rxvt-unicode desktop=^2
 bspc rule -a rxvt desktop=^2
