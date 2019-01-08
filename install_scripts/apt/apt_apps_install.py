@@ -37,6 +37,7 @@ apps.append("fonts-font-awesome")
 apps.append("rofi")
 apps.append("dmenu")
 apps.append("filezilla")
+apps.append("gdebi")
 apps.append("")
 
 run_cmd(" ".join(apps))
