@@ -7,6 +7,7 @@
 # Aliases
 	alias v="vim -p"
     alias agi="sudo apt install"	
+    alias agr="sudo apt remove"	
     alias agu="sudo apt update && sudo apt upgrade && sudo apt autoremove"	
     alias acs="apt-cache search"
 
