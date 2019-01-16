@@ -4,6 +4,8 @@ time_out () { perl -e 'alarm shift; exec @ARGV' "$@"; }
 if command -v tmux>/dev/null; then
 	#[ -z $TMUX ] && exec tmux attach -t Main
 	[ -z $TMUX ] && exec tmux new -A -s Main
+	[ -z $TMUX ] && exec tmux new -s NewsBoat /snap/bin/newsboat
+	[ -z $TMUX ] && exec tmux new -s Commute
 else 
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
