@@ -59,8 +59,8 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
-char SSID[25] = "wlp12s0";
-char Battery[10] = "BAT0";
+char SSID[25] = "wlp1s0";
+char Battery[10] = "BATC";
 static const struct arg args[] = {
 	/* function format          argument */
 	{ wifi_essid,        "%s|",        SSID },
