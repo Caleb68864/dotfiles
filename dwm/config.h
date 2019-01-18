@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "3", "4", "5", "6", "7", "", "" };
+static const char *tags[] = { "", "", "", "", "5", "6", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,8 +34,11 @@ static const Rule rules[] = {
 	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
 	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
 	{ "Xterm",           NULL,       NULL,       2,            0,           -1 },
-	{ "Pithos",          NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "vlc",             NULL,       NULL,       1 << 7,            0,           -1 },
+	{ "vlc",             NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "mpv",             NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Pithos",          NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "mpd",             NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Steam",           NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
