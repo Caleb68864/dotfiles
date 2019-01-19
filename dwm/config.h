@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "5", "6", "7", "8", "" };
+static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -30,15 +30,16 @@ static const Rule rules[] = {
 	{ "Gimp",            NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
 	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
-	{ "St",              NULL,       NULL,       2,            0,           -1 },
+	{ NULL,              NULL,       "st",       2,            0,           -1 },
 	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
 	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
 	{ "Xterm",           NULL,       NULL,       2,            0,           -1 },
+	{ NULL,              NULL,       "ranger",   1 << 2,       0,           -1 },
 	{ "vlc",             NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "mpv",             NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Pithos",          NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "mpd",             NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Steam",           NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Steam",           "Steam",    NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -76,7 +77,9 @@ static const char *rangercmd[] = { "st", "-e", "ranger", NULL };
 static const char *newsboatcmd[] = { "st", "-e", "tmux new -A -s NewsBoat newsboat", NULL };
 static const char *nmtuicmd[] = { "st", "-e", "nmtui", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *webcmd[]  = { "google-chrome", NULL };
+/*static const char *webcmd[]  = { "google-chrome", NULL };*/
+/*For Arch change to above for ubuntu*/
+static const char *webcmd[]  = { "google-chrome-stable", NULL };
 static const char *pithoscmd[]  = { "pithos", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 

@@ -13,6 +13,7 @@
     alias pmu="sudo pacman -Syy"
     alias pmup="sudo pacman -Su"
     alias pms="sudo pacman -Ss"
+    alias pmS="sudo pacman -S"
 
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
