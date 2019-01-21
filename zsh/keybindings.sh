@@ -8,6 +8,23 @@ function run_ranger() {
 	zle -N run_ranger
 	bindkey "^f" run_ranger
 
+# ranger	
+function run_newsboat() { 
+		#BUFFER="tmux new-session -A -s NewsBoat /snap/bin/newsboat"
+        #BUFFER="tmux new-window -n NewsBoat /snap/bin/newsboat && tmux find-window -N NewsBoat"
+        BUFFER=$(tmux find-window -N NewsBoat)
+        #echo $BUFFER
+        if [ -z "$BUFFER" ];
+            then
+                BUFFER="tmux new-window -n NewsBoat /snap/bin/newsboat"
+        fi	
+        #zle reset-prompt
+		zle end-of-line
+		zle accept-line
+	}
+	zle -N run_newsboat
+	bindkey "^n" run_newsboat
+    
 # up
 	function up_widget() {
 		BUFFER="cd .. && clear && ls"
@@ -41,6 +58,15 @@ function run_ranger() {
 	}
 	zle -N goto_home
 	bindkey "^h" goto_home
+
+# Documents
+	function goto_docs() { 
+		BUFFER="cd ~/Documents"$BUFFER
+		zle end-of-line
+		zle accept-line
+	}
+	zle -N goto_docs
+	bindkey "^d" goto_docs
 
 # Edit and rerun
 	function edit_and_run() {

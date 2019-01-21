@@ -3,6 +3,7 @@
 	SAVEHIST=1000 
 	setopt inc_append_history # To save every command before it is executed 
 	setopt share_history # setopt inc_append_history
+	setopt IGNORE_EOF # Disable Ctrl+d killing session
 
 # Aliases
 	alias v="vim -p"
@@ -24,6 +25,13 @@
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
+	# Add line to weekend projects text file
+    add2weprojects() {
+        echo $1 >> /home/pi/Storage/Documents/Weekend_Projects.txt;
+        sort /home/pi/Storage/Documents/Weekend_Projects.txt -o /home/pi/Storage/Documents/Weekend_Projects.txt;
+        #cat /home/pi/Storage/Commute/Commute.txt;
+    }
+    alias a2wp="add2weprojects"
 	# Add link to commute text file
     add2commute() {
         echo $1 >> /home/pi/Storage/Commute/Commute.txt;
