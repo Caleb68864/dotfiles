@@ -20,7 +20,7 @@
 	tr, td {
 		border: 1px white solid;
 	}
-	.w_left, .w_center, .w_right, .t_left, .t_center, .t_right {
+	.w_left, .w_center, .w_right, .t_left, .t_center, .t_right, .z_left, .z_center, .z_right  {
 		display:inline-block;
 		vertical-align: top;
 	}
@@ -43,6 +43,15 @@
 		width: 33%;
 	}
 	.t_right {
+		width: 33%;
+	}
+  .z_left {
+		width: 33%;
+	}
+	.z_center {
+		width: 33%;
+	}
+	.z_right {
 		width: 33%;
 	}
 	.table_header {
@@ -122,7 +131,7 @@
             ["Mod + k", "Move Focus Right"],
             ["Mod + h", "Expand Left"],
             ["Mod + l", "Expand Right"],
-            ["Mod + Return", "Zoom"],
+            ["Mod + Return", "Zoom to Main Tile"],
           ];
           gen_table("Window Control", rows, "30%");
         </script>
@@ -139,6 +148,41 @@
         </script>
       </div>
     </div>
+    <div id="zsh">
+      <h1 align="center">ZSH</h1>
+      <div class="z_left">
+        <script>
+          rows = [
+            ["Ctrl + f", "Run Ranger"],
+            ["w", "Choose Session"],
+            ["q", "Kill Session"],
+          ];
+          gen_table("Run Apps", rows, "20%");
+        </script>
+      </div>
+      <div class="z_center">
+        <script>
+          rows = [
+            ["Ctrl + k", "Move Up Directory"],
+            ["Ctrl + h", "Move to Home Directory"],
+            ["Ctrl + d", "Move to Documents Directory"],
+          ];
+          gen_table("Directory Movement", rows, "20%");
+        </script>
+      </div>
+      <div class="z_right">
+        <script>
+          rows = [
+            ["Ctrl + l", "Clear Screen"],
+            ["Ctrl + s", "Add Sudo"],
+            ["Ctrl + g", "Git Prepare"],
+            ["Ctrl + v", "Edit and Run Command"],
+            ["Ctrl + o", "Enter Line"],
+          ];
+          gen_table("Misc.", rows, "20%");
+        </script>
+      </div>
+    </div>
     <div id="tmux">
       <h1 align="center">TMUX</h1>
       <div class="t_left">
@@ -148,7 +192,7 @@
             ["w", "Choose Session"],
             ["q", "Kill Session"],
           ];
-          gen_table("Session Control", rows, "48%");
+          gen_table("Session Control", rows, "20%");
         </script>
       </div>
       <div class="t_center">
@@ -166,10 +210,9 @@
             ["n", "Spawn NewsBoat"],
             ["r", "Reload Source File"],
           ];
-          gen_table("Misc.", rows, "48%");
+          gen_table("Misc.", rows, "20%");
         </script>
       </div>
-
     </div>
   </div>
 </body>

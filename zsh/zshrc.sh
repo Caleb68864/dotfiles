@@ -3,6 +3,7 @@
 	SAVEHIST=1000 
 	setopt inc_append_history # To save every command before it is executed 
 	setopt share_history # setopt inc_append_history
+	setopt IGNORE_EOF # Disable Ctrl+d killing session
 
 # Aliases
 	alias v="vim -p"
