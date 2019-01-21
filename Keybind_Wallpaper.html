@@ -24,6 +24,9 @@
 		display:inline-block;
 		vertical-align: top;
 	}
+  .kb {
+    text-align: center;
+  }
 	.w_left {
 		width: 32%;
 	}
@@ -34,7 +37,7 @@
 		width: 27%;
 	}
   .t_left td.kb, .t_center td.kb, .t_right td.kb {
-    text-align: center;
+
 	}
   .t_left {
 		width: 33%;
@@ -154,8 +157,7 @@
         <script>
           rows = [
             ["Ctrl + f", "Run Ranger"],
-            ["w", "Choose Session"],
-            ["q", "Kill Session"],
+            ["Ctrl + n", "Run NewsBoat"],
           ];
           gen_table("Run Apps", rows, "20%");
         </script>
@@ -188,29 +190,52 @@
       <div class="t_left">
         <script>
           rows = [
-            ["c", "New Session"],
-            ["w", "Choose Session"],
-            ["q", "Kill Session"],
+            ["s", "Choose Session"],
+            ["Shift + q", "Kill Session"],
           ];
-          gen_table("Session Control", rows, "20%");
+          gen_table("Session Control", rows, "30%");
+          rows = [
+            ["c", "New Window"],
+            ["Shift + c", "Close Window"],
+            ["w", "Choose Window"],
+          ];
+          gen_table("Window Control", rows, "30%");
+
         </script>
       </div>
       <div class="t_center">
         <script>
-          rows = [
-            ["\"", "Split Window Verically"],
-            ["%", "Split Window Horizontally"],
-          ];
-          gen_table("Window Control", rows, "20%");
+        rows = [
+          ["\"", "Split Pane Verically"],
+          ["%", "Split Pane Horizontally"],
+          ["Spacebar", "Toggle Pane Layouts"],
+          ["{", "Move Current Pane Left"],
+          ["}", "Move Current Pane Right"],
+          ["z", "Toggle Zoom"],
+          ["!", "Convert to Window"],
+          ["x", "Close Pane"],
+        ];
+        gen_table("Pane Control", rows, "30%");
+        rows = [
+          ["h or Left", "Switch to the Left"],
+          ["j or Up", "Switch Upward"],
+          ["k or Down", "Switch Down"],
+          ["l or Right", "Switch to the Right"],
+          ["o", "Switch to Next Pane"],
+          ["q", "Show Pane Numbers"],
+          ["q + &ltnum&gt", "Switch/Select Pane by Number"],
+        ];
+        gen_table("Pane Movement", rows, "30%");
         </script>
       </div>
       <div class="t_right">
         <script>
           rows = [
-            ["n", "Spawn NewsBoat"],
+            ["Shift + n", "Spawn NewsBoat"],
             ["r", "Reload Source File"],
+            // [": setw synchronize-panes", "Toggle synchronize-panes(send command to all panes)"],
           ];
-          gen_table("Misc.", rows, "20%");
+          gen_table("Misc.", rows, "30%");
         </script>
       </div>
     </div>
