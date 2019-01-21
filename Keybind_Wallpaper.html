@@ -1,0 +1,177 @@
+<html>
+
+<head>
+  <style media="screen">
+    body {
+          	background-color: black;
+		color: white;
+	  	font-family: Arial, Helvetica, sans-serif;
+        }
+	#main{
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		/*background-color: red;*/
+	}
+	table {
+		width: 100%;
+		padding-bottom: 10px;
+	}
+	tr, td {
+		border: 1px white solid;
+	}
+	.w_left, .w_center, .w_right, .t_left, .t_center, .t_right {
+		display:inline-block;
+		vertical-align: top;
+	}
+	.w_left {
+		width: 32%;
+	}
+	.w_center {
+		width: 40%;
+	}
+	.w_right {
+		width: 27%;
+	}
+  .t_left td.kb, .t_center td.kb, .t_right td.kb {
+    text-align: center;
+	}
+  .t_left {
+		width: 33%;
+	}
+	.t_center {
+		width: 33%;
+	}
+	.t_right {
+		width: 33%;
+	}
+	.table_header {
+		text-align: center;
+		font-weight: bold;
+		/*
+		background-color: white;
+		color: black;
+		border: 1px black solid;
+		*/
+	}
+    </style>
+  <script type="text/javascript">
+    function table_row(kb, command, left_col) {
+      var row = '<tr><td class="kb" style="width:' + left_col + '">';
+      row += kb;
+      row += '</td><td class="command">';
+      row += command;
+      row += '</td></tr>';
+      return row;
+    }
+
+    function gen_table(header, rows, left_col) {
+      var table = '<table><tr><td class="table_header" colspan="2">';
+      table += header;
+      table += '</td></tr>';
+      for (var i = 0; i < rows.length; i++) {
+        row = rows[i];
+        table += table_row(row[0], row[1], left_col);
+      }
+      table += '</table>';
+      document.write(table);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="wm">
+      <h1 align="center">Window Manager</h1>
+      <div class="w_left">
+        <script>
+          rows = [
+            ["Mod + Return", "Spawn Terminal"],
+            ["Mod + Space", "Spawn Rofi"],
+            ["Mod + Shift + Space", "Spawn Dmenu"],
+            ["Mod + Shift + f", "Spawn Ranger"],
+            ["Mod + n", "Spawn Nmtui"],
+            ["Mod + Shift + n", "Spawn Newsboat"],
+            ["Mod + Shift + w", "Spawn Web Browser"],
+            ["Mod + Shift + m", "Spawn Pithos"],
+          ];
+          gen_table("Spawn Apps", rows, "48%");
+        </script>
+      </div>
+      <div class="w_center">
+        <script>
+          rows = [
+            ["Mod + t", "Set Layout Tiled"],
+            ["Mod + f", "Set Layout Floating"],
+            ["Mod + m", "Set Layout Monocle"],
+            ["Mod + c", "Set Layout Three Column"],
+            ["Mod + g", "Set Layout Grid"],
+          ];
+          gen_table("Layout Control", rows, "20%");
+
+          rows = [
+            ["Mod + &ltnum&gt", "Switch to Tag &ltnum&gt"],
+            ["Mod + Shift + &ltnum&gt", "Move Window to Tag &ltnum&gt"],
+          ];
+          gen_table("Tag Control", rows, "40%");
+
+          rows = [
+            ["Mod + Shift + c", "Close Window"],
+            ["Mod + Tab", "Switch Window"],
+            ["Mod + j", "Move Focus Left"],
+            ["Mod + k", "Move Focus Right"],
+            ["Mod + h", "Expand Left"],
+            ["Mod + l", "Expand Right"],
+            ["Mod + Return", "Zoom"],
+          ];
+          gen_table("Window Control", rows, "30%");
+        </script>
+      </div>
+      <div class="w_right">
+        <script>
+          rows = [
+            ["Mod + Shift + c", "Close App"],
+            ["Mod + Shift + l", "Lock Screen"],
+            ["Mod + Shift + q", "Kill DWM"],
+            ["Mod + b", "Toggle Status bar"],
+          ];
+          gen_table("Misc.", rows, "48%");
+        </script>
+      </div>
+    </div>
+    <div id="tmux">
+      <h1 align="center">TMUX</h1>
+      <div class="t_left">
+        <script>
+          rows = [
+            ["c", "New Session"],
+            ["w", "Choose Session"],
+            ["q", "Kill Session"],
+          ];
+          gen_table("Session Control", rows, "48%");
+        </script>
+      </div>
+      <div class="t_center">
+        <script>
+          rows = [
+            ["\"", "Split Window Verically"],
+            ["%", "Split Window Horizontally"],
+          ];
+          gen_table("Window Control", rows, "20%");
+        </script>
+      </div>
+      <div class="t_right">
+        <script>
+          rows = [
+            ["n", "Spawn NewsBoat"],
+            ["r", "Reload Source File"],
+          ];
+          gen_table("Misc.", rows, "48%");
+        </script>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
