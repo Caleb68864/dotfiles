@@ -19,16 +19,27 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class             instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",            NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
+	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
+	{ NULL,              NULL,       "st",       2,            0,           -1 },
+	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
+	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
+	{ "Xterm",           NULL,       NULL,       2,            0,           -1 },
+	{ NULL,              NULL,       "ranger",   1 << 2,       0,           -1 },
+	{ "vlc",             NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "mpv",             NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Pithos",          NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "mpd",             NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Steam",           "Steam",    NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -36,20 +47,19 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
-#include "grid.c"
+#include "tcl.c"
 #include "grid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|||",      col },
-	{ "HHH",      grid },
-	{ "HHH",      grid },
+	{ "[=||=]",    tcl },
+	{ "[+]",      grid },
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -62,12 +72,29 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *roficmd[] = { "rofi", "-show", "run", NULL };
+static const char *rangercmd[] = { "st", "-e", "ranger", NULL };
+static const char *newsboatcmd[] = { "st", "-e", "tmux new -A -s NewsBoat newsboat", NULL };
+static const char *nmtuicmd[] = { "st", "-e", "nmtui", NULL };
 static const char *termcmd[]  = { "st", NULL };
+/*static const char *webcmd[]  = { "google-chrome", NULL };*/
+/*For Arch change to above for ubuntu*/
+static const char *webcmd[]  = { "google-chrome-stable", NULL };
+static const char *pithoscmd[]  = { "pithos", NULL };
+static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	/*{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },*/
+	{ MODKEY,                       XK_space,  spawn,          {.v = roficmd } },
+	{ MODKEY|ShiftMask,             XK_space,  spawn,          {.v = dmenucmd } },
+	{ MODKEY          ,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = rangercmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = newsboatcmd } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = nmtuicmd } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pithoscmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -75,15 +102,18 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[4]} },
+	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
+	{ MODKEY,                       XK_p,      setlayout,      {0} },
+	/*{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },*/
+	{ MODKEY|ShiftMask,             XK_p,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
