@@ -77,7 +77,7 @@ static const char *rangercmd[] = { "st", "-e", "ranger", NULL };
 static const char *newsboatcmd[] = { "st", "-e", "tmux new -A -s NewsBoat newsboat", NULL };
 static const char *nmtuicmd[] = { "st", "-e", "nmtui", NULL };
 static const char *termcmd[]  = { "st", NULL };
-/*static const char *webcmd[]  = { "google-chrome", NULL };*/
+/* static const char *webcmd[]  = { "google-chrome", NULL };*/
 /*For Arch change to above for ubuntu*/
 static const char *webcmd[]  = { "google-chrome-stable", NULL };
 static const char *pithoscmd[]  = { "pithos", NULL };
