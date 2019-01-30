@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -38,6 +37,7 @@ static const Rule rules[] = {
 	{ "vlc",             NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "mpv",             NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Pithos",          NULL,       NULL,       1 << 4,       0,           -1 },
+	{ NULL,              NULL,       "pianobar", 1 << 4,       0,           -1 },
 	{ "mpd",             NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Steam",           "Steam",    NULL,       1 << 8,       0,           -1 },
 };
@@ -82,6 +82,10 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *webcmd[]  = { "google-chrome-stable", NULL };
 static const char *pithoscmd[]  = { "pithos", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
+#include <X11/XF86keysym.h>
+static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
+static const char *voldwncmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
+static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,6 +99,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pithoscmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
+	{ 0,         XF86XK_AudioMute,             spawn,          {.v = volmutecmd } },
+	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volupcmd } },
+	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldwncmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
