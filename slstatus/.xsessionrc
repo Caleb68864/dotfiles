@@ -1,2 +1,4 @@
 #!/bin/bash
 ( sleep 3 & slstatus ) &
+compton &
+feh  --bg-scale ~/dotfiles/KB_Wall.jpg

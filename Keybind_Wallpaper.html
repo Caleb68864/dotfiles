@@ -7,18 +7,32 @@
 		color: white;
 	  	font-family: Arial, Helvetica, sans-serif;
         }
-	#main{
-		width: 80%;
-		margin-right: auto;
+    .centered {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          margin-top: -50px;
+          margin-left: -100px;
+    }
+    #main{
+		width: 45%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-right: auto;
 		margin-left: auto;
 		/*background-color: red;*/
 	}
+    h1 {
+        font-size: -webkit-xxx-large;
+    }
 	table {
 		width: 100%;
 		padding-bottom: 10px;
+        font-size: larger;
 	}
 	tr, td {
 		border: 1px white solid;
+        padding: 5px;
 	}
 	.w_left, .w_center, .w_right, .t_left, .t_center, .t_right, .z_left, .z_center, .z_right  {
 		display:inline-block;
@@ -92,7 +106,7 @@
 </head>
 
 <body>
-  <div id="main">
+  <div id="main" class="">
     <div id="wm">
       <h1 align="center">Window Manager</h1>
       <div class="w_left">
