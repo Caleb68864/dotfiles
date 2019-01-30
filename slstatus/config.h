@@ -59,13 +59,14 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
-char SSID[15] = "wlp12s0";
+/*char WIFI[50] = "~/dotfiles/slstatus/get_wifi";*/
+char WIFI[50] = "wlp12s0";
 char Battery[10] = "BAT0";
 char Volume[50] = "~/dotfiles/slstatus/get_volume";
 static const struct arg args[] = {
 	/* function format          argument */
-	{ wifi_essid,        "%s|",        SSID },
-	{ wifi_perc,         "%s%% ",      SSID },
+	{ wifi_essid,        "%s|",        WIFI },
+	{ wifi_perc,         "%s%% ",      WIFI },
 	{ battery_state,     "%s|",        Battery },
 	{ battery_perc,      "%s%%",       Battery },
 	{ battery_remaining, " %s",        Battery },
