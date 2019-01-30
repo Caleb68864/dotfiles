@@ -81,6 +81,7 @@ static const char *termcmd[]  = { "st", NULL };
 /*For Arch change to above for ubuntu*/
 static const char *webcmd[]  = { "google-chrome-stable", NULL };
 static const char *pithoscmd[]  = { "pithos", NULL };
+static const char *pianobarcmd[] = { "st", "-e", "pianobar", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 #include <X11/XF86keysym.h>
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
@@ -97,7 +98,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = newsboatcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = nmtuicmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pithoscmd } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pianobarcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ 0,         XF86XK_AudioMute,             spawn,          {.v = volmutecmd } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volupcmd } },
