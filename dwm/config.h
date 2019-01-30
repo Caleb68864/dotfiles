@@ -29,7 +29,7 @@ static const Rule rules[] = {
 	{ "Gimp",            NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
 	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
-	{ "Vivaldi-stable",   NULL,       NULL,       1,            0,           -1 },
+	{ "Vivaldi-stable",  NULL,       NULL,       1,            0,           -1 },
 	{ NULL,              NULL,       "st",       2,            0,           -1 },
 	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
 	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
@@ -57,6 +57,7 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 	{ "[=||=]",    tcl },
 	{ "[+]",      grid },
+	{ NULL,       NULL },
 };
 
 /* key definitions */
@@ -120,6 +121,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ControlMask,    		XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
 	{ MODKEY,                       XK_p,      setlayout,      {0} },
 	/*{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },*/
