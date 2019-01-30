@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	{ "Gimp",            NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
 	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
+	{ "Vivaldi-stable",   NULL,       NULL,       1,            0,           -1 },
 	{ NULL,              NULL,       "st",       2,            0,           -1 },
 	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
 	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
@@ -79,7 +80,8 @@ static const char *nmtuicmd[] = { "st", "-e", "nmtui", NULL };
 static const char *termcmd[]  = { "st", NULL };
 /* static const char *webcmd[]  = { "google-chrome", NULL };*/
 /*For Arch change to above for ubuntu*/
-static const char *webcmd[]  = { "google-chrome-stable", NULL };
+/*static const char *webcmd[]  = { "google-chrome-stable", NULL };*/
+static const char *webcmd[]  = { "vivaldi", NULL };
 static const char *pithoscmd[]  = { "pithos", NULL };
 static const char *pianobarcmd[] = { "st", "-e", "pianobar", NULL };
 static const char *lockcmd[]  = { "slock", NULL };

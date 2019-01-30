@@ -3,7 +3,7 @@ muted=$(awk '/muted/ {print $2}' <(pacmd list-sinks))
 if [ $muted != "yes" ]
 then
     volume=$(awk '/volume/ {print $5;exit}' <(pacmd list-sinks))
-    echo "Vol|"$volume
+    echo "|"$volume
 else
-    echo "Muted"
+    echo ""
 fi
