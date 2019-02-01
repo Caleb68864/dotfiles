@@ -254,6 +254,52 @@
         </script>
       </div>
     </div>
+    <div id="surf">
+      <h1 align="center">Surf</h1>
+      <div class="s_left">
+        <script>
+          rows = [
+            ["Ctrl + g or Ctrl + /", "Open URL Bar"],
+            ["Ctrl + r", "Reload the Page"],
+            ["Ctrl + Shift + r", "Reload the Page Without Cache"],
+            ["Ctrl + f", "Open Search Bar"],
+            ["Ctrl + n", "Go To Next Search Result"],
+            ["Ctrl + Shift + n", "Go To Previous Search Result"],
+            ["Ctrl + p", "Load URL from Primary Selection"],
+          ];
+          gen_table("URL Navigation", rows, "30%");
+          rows = [
+            ["Escape", "Stop loading current page or stop download"],
+            ["Ctrl + h", "Walk Back in History"],
+            ["Ctrl + l", "Walk Forward in History"],
+          ];
+          gen_table("Page Navigation", rows, "30%");
+        </script>
+      </div>
+      <div class="s_center">
+        <script>
+        rows = [
+          ["Ctrl + k", "Scroll Page Up"],
+          ["Ctrl + j", "Scroll Page Down"],
+          ["Ctrl + b", "Scroll Up One Whole Page View"],
+          ["Ctrl + Space", "Scroll Down One Whole Page View"],
+          ["Ctrl + u", "Scroll Horizontally to the Left"],
+          ["Ctrl + i", "Scroll Horizontally to the Right"],
+        ];
+        gen_table("Scrolling", rows, "30%");
+        </script>
+      </div>
+      <div class="s_right">
+        <script>
+          rows = [
+            ["Ctrl + Shift + k or Ctrl +", "Zoom Page In"],
+            ["Ctrl + Shift + j or Ctrl -", "Zoom Page Out"],
+            ["Ctrl + Shift + q", "Reset Zoom"],
+          ];
+          gen_table("Zoom Control", rows, "30%");
+        </script>
+      </div>
+    </div>
   </div>
 </body>
 
