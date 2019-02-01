@@ -30,6 +30,7 @@ static const Rule rules[] = {
 	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
 	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
 	{ "Vivaldi-stable",  NULL,       NULL,       1,            0,           -1 },
+	{ "Surf",            NULL,       NULL,       1,            0,           -1 },
 	{ NULL,              NULL,       "st",       2,            0,           -1 },
 	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
 	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
@@ -83,6 +84,7 @@ static const char *termcmd[]  = { "st", NULL };
 /*For Arch change to above for ubuntu*/
 /*static const char *webcmd[]  = { "google-chrome-stable", NULL };*/
 static const char *webcmd[]  = { "vivaldi", NULL };
+static const char *surfcmd[]  = { "surf", NULL };
 static const char *pithoscmd[]  = { "pithos", NULL };
 static const char *pianobarcmd[] = { "st", "-e", "pianobar", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
@@ -101,6 +103,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = newsboatcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = nmtuicmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = surfcmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pianobarcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 	{ 0,         XF86XK_AudioMute,             spawn,          {.v = volmutecmd } },
