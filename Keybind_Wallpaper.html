@@ -15,13 +15,28 @@
           margin-left: -100px;
     }
     #main{
-		width: 45%;
+		    width: 100%;
         margin-top: 5%;
         margin-bottom: 5%;
         margin-right: auto;
-		margin-left: auto;
+		    margin-left: auto;
 		/*background-color: red;*/
-	}
+	  }
+    #main_left, #main_right{
+      width: 45%;
+      display:inline-block;
+  		vertical-align: top;
+    }
+    #main_left{
+      float: left;
+      margin-left: 3%;
+		    /* background-color: red; */
+	  }
+    #main_right{
+      float: right;
+      margin-right: 3%;
+		    /* background-color: blue; */
+	  }
     h1 {
         font-size: -webkit-xxx-large;
     }
@@ -34,7 +49,7 @@
 		border: 1px white solid;
         padding: 5px;
 	}
-	.w_left, .w_center, .w_right, .t_left, .t_center, .t_right, .z_left, .z_center, .z_right  {
+	.w_left, .w_center, .w_right, .t_left, .t_center, .t_right, .z_left, .z_center, .z_right, .s_left, .s_center, .s_right  {
 		display:inline-block;
 		vertical-align: top;
 	}
@@ -69,6 +84,15 @@
 		width: 33%;
 	}
 	.z_right {
+		width: 33%;
+	}
+  .s_left {
+		width: 33%;
+	}
+	.s_center {
+		width: 33%;
+	}
+	.s_right {
 		width: 33%;
 	}
 	.table_header {
@@ -107,197 +131,205 @@
 
 <body>
   <div id="main" class="">
-    <div id="wm">
-      <h1 align="center">Window Manager</h1>
-      <div class="w_left">
-        <script>
-          rows = [
-            ["Mod + Return", "Spawn Terminal"],
-            ["Mod + Space", "Spawn Rofi"],
-            ["Mod + Shift + Space", "Spawn Dmenu"],
-            ["Mod + Shift + f", "Spawn Ranger"],
-            ["Mod + n", "Spawn Nmtui"],
-            ["Mod + Shift + n", "Spawn Newsboat"],
-            ["Mod + Shift + w", "Spawn Web Browser"],
-            ["Mod + Shift + m", "Spawn PianoBar"],
-          ];
-          gen_table("Spawn Apps", rows, "48%");
-        </script>
-      </div>
-      <div class="w_center">
-        <script>
-          rows = [
-            ["Mod + t", "Set Layout Tiled"],
-            ["Mod + f", "Set Layout Floating"],
-            ["Mod + m", "Set Layout Monocle"],
-            ["Mod + c", "Set Layout Three Column"],
-            ["Mod + g", "Set Layout Grid"],
-          ];
-          gen_table("Layout Control", rows, "20%");
+    <div id="main_left" class="">
+      <div id="wm">
+        <h1 align="center">Window Manager</h1>
+        <div class="w_left">
+          <script>
+            rows = [
+              ["Mod + Return", "Spawn Terminal"],
+              ["Mod + Space", "Spawn Rofi"],
+              ["Mod + Shift + Space", "Spawn Dmenu"],
+              ["Mod + Shift + f", "Spawn Ranger"],
+              ["Mod + n", "Spawn Nmtui"],
+              ["Mod + Shift + n", "Spawn Newsboat"],
+              ["Mod + Shift + w", "Spawn Web Browser"],
+              ["Mod + Shift + m", "Spawn PianoBar"],
+            ];
+            gen_table("Spawn Apps", rows, "48%");
+          </script>
+        </div>
+        <div class="w_center">
+          <script>
+            rows = [
+              ["Mod + t", "Set Layout Tiled"],
+              ["Mod + f", "Set Layout Floating"],
+              ["Mod + m", "Set Layout Monocle"],
+              ["Mod + c", "Set Layout Three Column"],
+              ["Mod + g", "Set Layout Grid"],
+              ["Mod + Shift + j", "Rotate Stack Left"],
+              ["Mod + Shift + k", "Rotate Stack Right"],
+            ];
+            gen_table("Layout Control", rows, "25%");
 
-          rows = [
-            ["Mod + &ltnum&gt", "Switch to Tag &ltnum&gt"],
-            ["Mod + Shift + &ltnum&gt", "Move Window to Tag &ltnum&gt"],
-          ];
-          gen_table("Tag Control", rows, "40%");
+            rows = [
+              ["Mod + &ltnum&gt", "Switch to Tag &ltnum&gt"],
+              ["Mod + Shift + &ltnum&gt", "Move Window to Tag &ltnum&gt"],
+            ];
+            gen_table("Tag Control", rows, "40%");
 
-          rows = [
-            ["Mod + Shift + c", "Close Window"],
-            ["Mod + Tab", "Switch Window"],
-            ["Mod + j", "Move Focus Left"],
-            ["Mod + k", "Move Focus Right"],
-            ["Mod + h", "Expand Left"],
-            ["Mod + l", "Expand Right"],
-            ["Mod + Return", "Zoom to Main Tile"],
-          ];
-          gen_table("Window Control", rows, "30%");
-        </script>
+            rows = [
+              ["Mod + Shift + c", "Close Window"],
+              ["Mod + Tab", "Switch Window"],
+              ["Mod + j", "Move Focus Left"],
+              ["Mod + k", "Move Focus Right"],
+              ["Mod + h", "Expand Left"],
+              ["Mod + l", "Expand Right"],
+              ["Mod + Return", "Zoom to Main Tile"],
+            ];
+            gen_table("Window Control", rows, "30%");
+          </script>
+        </div>
+        <div class="w_right">
+          <script>
+            rows = [
+              ["Mod + Shift + c", "Close App"],
+              ["Mod + Control + l", "Lock Screen"],
+              ["Mod + Shift + q", "Kill DWM"],
+              ["Mod + b", "Toggle Status bar"],
+            ];
+            gen_table("Misc.", rows, "48%");
+          </script>
+        </div>
       </div>
-      <div class="w_right">
-        <script>
-          rows = [
-            ["Mod + Shift + c", "Close App"],
-            ["Mod + Shift + l", "Lock Screen"],
-            ["Mod + Shift + q", "Kill DWM"],
-            ["Mod + b", "Toggle Status bar"],
-          ];
-          gen_table("Misc.", rows, "48%");
-        </script>
+
+      <div id="zsh">
+        <h1 align="center">ZSH</h1>
+        <div class="z_left">
+          <script>
+            rows = [
+              ["Ctrl + f", "Run Ranger"],
+              ["Ctrl + n", "Run NewsBoat"],
+            ];
+            gen_table("Run Apps", rows, "20%");
+          </script>
+        </div>
+        <div class="z_center">
+          <script>
+            rows = [
+              ["Ctrl + k", "Move Up Directory"],
+              ["Ctrl + h", "Move to Home Directory"],
+              ["Ctrl + d", "Move to Documents Directory"],
+            ];
+            gen_table("Directory Movement", rows, "20%");
+          </script>
+        </div>
+        <div class="z_right">
+          <script>
+            rows = [
+              ["Ctrl + l", "Clear Screen"],
+              ["Ctrl + s", "Add Sudo"],
+              ["Ctrl + g", "Git Prepare"],
+              ["Ctrl + v", "Edit and Run Command"],
+              ["Ctrl + o", "Enter Line"],
+            ];
+            gen_table("Misc.", rows, "20%");
+          </script>
+        </div>
       </div>
     </div>
-    <div id="zsh">
-      <h1 align="center">ZSH</h1>
-      <div class="z_left">
-        <script>
-          rows = [
-            ["Ctrl + f", "Run Ranger"],
-            ["Ctrl + n", "Run NewsBoat"],
-          ];
-          gen_table("Run Apps", rows, "20%");
-        </script>
-      </div>
-      <div class="z_center">
-        <script>
-          rows = [
-            ["Ctrl + k", "Move Up Directory"],
-            ["Ctrl + h", "Move to Home Directory"],
-            ["Ctrl + d", "Move to Documents Directory"],
-          ];
-          gen_table("Directory Movement", rows, "20%");
-        </script>
-      </div>
-      <div class="z_right">
-        <script>
-          rows = [
-            ["Ctrl + l", "Clear Screen"],
-            ["Ctrl + s", "Add Sudo"],
-            ["Ctrl + g", "Git Prepare"],
-            ["Ctrl + v", "Edit and Run Command"],
-            ["Ctrl + o", "Enter Line"],
-          ];
-          gen_table("Misc.", rows, "20%");
-        </script>
-      </div>
-    </div>
-    <div id="tmux">
-      <h1 align="center">TMUX</h1>
-      <div class="t_left">
-        <script>
-          rows = [
-            ["s", "Choose Session"],
-            ["S", "New Session"],
-            ["Shift + q", "Kill Session"],
-          ];
-          gen_table("Session Control", rows, "30%");
-          rows = [
-            ["c", "New Window"],
-            ["Shift + c", "Close Window"],
-            ["w", "Choose Window"],
-          ];
-          gen_table("Window Control", rows, "30%");
+    <div id="main_right" class="">
+      <div id="tmux">
+        <h1 align="center">TMUX</h1>
+        <div class="t_left">
+          <script>
+            rows = [
+              ["s", "Choose Session"],
+              ["S", "New Session"],
+              ["Shift + q", "Kill Session"],
+            ];
+            gen_table("Session Control", rows, "30%");
+            rows = [
+              ["c", "New Window"],
+              ["Shift + c", "Close Window"],
+              ["w", "Choose Window"],
+            ];
+            gen_table("Window Control", rows, "30%");
 
-        </script>
-      </div>
-      <div class="t_center">
-        <script>
-        rows = [
-          ["\"", "Split Pane Verically"],
-          ["%", "Split Pane Horizontally"],
-          ["Spacebar", "Toggle Pane Layouts"],
-          ["{", "Move Current Pane Left"],
-          ["}", "Move Current Pane Right"],
-          ["z", "Toggle Zoom"],
-          ["!", "Convert to Window"],
-          ["x", "Close Pane"],
-        ];
-        gen_table("Pane Control", rows, "30%");
-        rows = [
-          ["h or Left", "Switch to the Left"],
-          ["j or Up", "Switch Upward"],
-          ["k or Down", "Switch Down"],
-          ["l or Right", "Switch to the Right"],
-          ["o", "Switch to Next Pane"],
-          ["q", "Show Pane Numbers"],
-          ["q + &ltnum&gt", "Switch/Select Pane by Number"],
-        ];
-        gen_table("Pane Movement", rows, "30%");
-        </script>
-      </div>
-      <div class="t_right">
-        <script>
+          </script>
+        </div>
+        <div class="t_center">
+          <script>
           rows = [
-            ["Shift + n", "Spawn NewsBoat"],
-            ["r", "Reload Source File"],
-            // [": setw synchronize-panes", "Toggle synchronize-panes(send command to all panes)"],
+            ["\"", "Split Pane Verically"],
+            ["%", "Split Pane Horizontally"],
+            ["Spacebar", "Toggle Pane Layouts"],
+            ["{", "Move Current Pane Left"],
+            ["}", "Move Current Pane Right"],
+            ["z", "Toggle Zoom"],
+            ["!", "Convert to Window"],
+            ["x", "Close Pane"],
           ];
-          gen_table("Misc.", rows, "30%");
-        </script>
-      </div>
-    </div>
-    <div id="surf">
-      <h1 align="center">Surf</h1>
-      <div class="s_left">
-        <script>
+          gen_table("Pane Control", rows, "30%");
           rows = [
-            ["Ctrl + g or Ctrl + /", "Open URL Bar"],
-            ["Ctrl + r", "Reload the Page"],
-            ["Ctrl + Shift + r", "Reload the Page Without Cache"],
-            ["Ctrl + f", "Open Search Bar"],
-            ["Ctrl + n", "Go To Next Search Result"],
-            ["Ctrl + Shift + n", "Go To Previous Search Result"],
-            ["Ctrl + p", "Load URL from Primary Selection"],
+            ["h or Left", "Switch to the Left"],
+            ["j or Up", "Switch Upward"],
+            ["k or Down", "Switch Down"],
+            ["l or Right", "Switch to the Right"],
+            ["o", "Switch to Next Pane"],
+            ["q", "Show Pane Numbers"],
+            ["q + &ltnum&gt", "Switch/Select Pane by Number"],
           ];
-          gen_table("URL Navigation", rows, "30%");
-          rows = [
-            ["Escape", "Stop loading current page or stop download"],
-            ["Ctrl + h", "Walk Back in History"],
-            ["Ctrl + l", "Walk Forward in History"],
-          ];
-          gen_table("Page Navigation", rows, "30%");
-        </script>
+          gen_table("Pane Movement", rows, "30%");
+          </script>
+        </div>
+        <div class="t_right">
+          <script>
+            rows = [
+              ["Shift + n", "Spawn NewsBoat"],
+              ["r", "Reload Source File"],
+              // [": setw synchronize-panes", "Toggle synchronize-panes(send command to all panes)"],
+            ];
+            gen_table("Misc.", rows, "30%");
+          </script>
+        </div>
       </div>
-      <div class="s_center">
-        <script>
-        rows = [
-          ["Ctrl + k", "Scroll Page Up"],
-          ["Ctrl + j", "Scroll Page Down"],
-          ["Ctrl + b", "Scroll Up One Whole Page View"],
-          ["Ctrl + Space", "Scroll Down One Whole Page View"],
-          ["Ctrl + u", "Scroll Horizontally to the Left"],
-          ["Ctrl + i", "Scroll Horizontally to the Right"],
-        ];
-        gen_table("Scrolling", rows, "30%");
-        </script>
-      </div>
-      <div class="s_right">
-        <script>
+
+      <div id="surf">
+        <h1 align="center">Surf</h1>
+        <div class="s_left">
+          <script>
+            rows = [
+              ["Ctrl + g or Ctrl + /", "Open URL Bar"],
+              ["Ctrl + r", "Reload the Page"],
+              ["Ctrl + Shift + r", "Reload the Page Without Cache"],
+              ["Ctrl + f", "Open Search Bar"],
+              ["Ctrl + n", "Go To Next Search Result"],
+              ["Ctrl + Shift + n", "Go To Previous Search Result"],
+              ["Ctrl + p", "Load URL from Primary Selection"],
+            ];
+            gen_table("URL Navigation", rows, "35%");
+            rows = [
+              ["Escape", "Stop loading current page or stop download"],
+              ["Ctrl + h", "Walk Back in History"],
+              ["Ctrl + l", "Walk Forward in History"],
+            ];
+            gen_table("Page Navigation", rows, "30%");
+          </script>
+        </div>
+        <div class="s_center">
+          <script>
           rows = [
-            ["Ctrl + Shift + k or Ctrl +", "Zoom Page In"],
-            ["Ctrl + Shift + j or Ctrl -", "Zoom Page Out"],
-            ["Ctrl + Shift + q", "Reset Zoom"],
+            ["Ctrl + k", "Scroll Page Up"],
+            ["Ctrl + j", "Scroll Page Down"],
+            ["Ctrl + b", "Scroll Up One Whole Page View"],
+            ["Ctrl + Space", "Scroll Down One Whole Page View"],
+            ["Ctrl + u", "Scroll Horizontally to the Left"],
+            ["Ctrl + i", "Scroll Horizontally to the Right"],
           ];
-          gen_table("Zoom Control", rows, "30%");
-        </script>
+          gen_table("Scrolling", rows, "30%");
+          </script>
+        </div>
+        <div class="s_right">
+          <script>
+            rows = [
+              ["Ctrl + Shift + k or Ctrl +", "Zoom Page In"],
+              ["Ctrl + Shift + j or Ctrl -", "Zoom Page Out"],
+              ["Ctrl + Shift + q", "Reset Zoom"],
+            ];
+            gen_table("Zoom Control", rows, "45%");
+          </script>
+        </div>
       </div>
     </div>
   </div>
