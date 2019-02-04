@@ -92,6 +92,8 @@ static const char *lockcmd[]  = { "slock", NULL };
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *voldwncmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -99,6 +101,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY          ,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = rangercmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = newsboatcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = nmtuicmd } },
