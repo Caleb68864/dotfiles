@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "" };
+static const char *tags[] = { "", "", "", "", "", "", "7", "8", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -51,6 +51,7 @@ static const Rule rules[] = {
 	{ "Pithos",          NULL,       NULL,       1 << 4,       0,           -1 },
 	{ NULL,              NULL,       "pianobar", 1 << 4,       0,           -1 },
 	{ "mpd",             NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "Remmina",         NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Steam",           "Steam",    NULL,       1 << 8,       0,           -1 },
 };
 
@@ -97,6 +98,7 @@ static const char *webcmd[]  = { "vivaldi", NULL };
 static const char *surfcmd[]  = { "surf", NULL };
 /*static const char *pithoscmd[]  = { "pithos", NULL };*/
 static const char *pianobarcmd[] = { "st", "-e", "pianobar", NULL };
+static const char *remminacmd[]  = { "remmina", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 #include <X11/XF86keysym.h>
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
@@ -118,6 +120,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = surfcmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pianobarcmd } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = remminacmd } },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          {.v = lockcmd } },
 	{ 0,         XF86XK_AudioMute,             spawn,          {.v = volmutecmd } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volupcmd } },
