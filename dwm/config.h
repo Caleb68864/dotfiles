@@ -11,10 +11,19 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+
+static const char normbordercolor[] = "#444444";
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char col_select[]      = "#005577";
+static const char selbordercolor[]  = "#ffffff";
+static const char selbgcolor[]      = "#ffffff"; /*Sets color behind icon or text*/
+static const char selfgcolor[]      = "#000000"; /*Sets color of icon or text*/
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*               fg           bg           border   */
+	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -27,6 +36,7 @@ static const Rule rules[] = {
 	 */
 	/* class             instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",            NULL,       NULL,       0,            1,           -1 },
+	{ "Inkscape",        NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
 	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
 	{ "Vivaldi-stable",  NULL,       NULL,       1,            0,           -1 },
@@ -77,7 +87,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *roficmd[] = { "rofi", "-show", "run", NULL };
 static const char *rangercmd[] = { "st", "-e", "ranger", NULL };
-static const char *newsboatcmd[] = { "st", "-e", "tmux new -A -s NewsBoat newsboat", NULL };
+/*static const char *newsboatcmd[] = { "st", "-e", "tmux new -A -s NewsBoat newsboat", NULL };*/
 static const char *nmtuicmd[] = { "st", "-e", "nmtui", NULL };
 static const char *termcmd[]  = { "st", NULL };
 /* static const char *webcmd[]  = { "google-chrome", NULL };*/
@@ -85,7 +95,7 @@ static const char *termcmd[]  = { "st", NULL };
 /*static const char *webcmd[]  = { "google-chrome-stable", NULL };*/
 static const char *webcmd[]  = { "vivaldi", NULL };
 static const char *surfcmd[]  = { "surf", NULL };
-static const char *pithoscmd[]  = { "pithos", NULL };
+/*static const char *pithoscmd[]  = { "pithos", NULL };*/
 static const char *pianobarcmd[] = { "st", "-e", "pianobar", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 #include <X11/XF86keysym.h>
@@ -103,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY          ,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = rangercmd } },
-	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = newsboatcmd } },
+/*	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = newsboatcmd } },*/
 	{ MODKEY,                       XK_n,      spawn,          {.v = nmtuicmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = surfcmd } },
