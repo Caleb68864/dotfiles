@@ -150,6 +150,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+    { MODKEY,                       XK_Left,   cycle,          {.i = -1 } }, /* Cycle to Previous Tag */
+    { MODKEY,                       XK_Right,  cycle,          {.i = +1 } }, /* Cycle to Next Tag */
+    { MODKEY|ShiftMask,             XK_Left,   tagcycle,       {.i = -1 } }, /* Move Focsed Window to Previous Tag */
+    { MODKEY|ShiftMask,             XK_Right,  tagcycle,       {.i = +1 } }, /* Move Focsed Window to Next Tag */
 	{ MODKEY,                       XK_period, focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = -1 } },
