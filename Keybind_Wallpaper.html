@@ -167,6 +167,10 @@
             rows = [
               ["Mod + &ltnum&gt", "Switch to Tag &ltnum&gt"],
               ["Mod + Shift + &ltnum&gt", "Move Window to Tag &ltnum&gt"],
+              ["Mod + Left", "Switch to Previous Tag"],
+              ["Mod + Right", "Switch to Next Tag"],
+              ["Mod + Shift + Left", "Move Window to Previous Tag"],
+              ["Mod + Shift + Right", "Move Window to Next Tag"],
             ];
             gen_table("Tag Control", rows, "40%");
 
@@ -178,6 +182,7 @@
               ["Mod + h", "Expand Left"],
               ["Mod + l", "Expand Right"],
               ["Mod + Return", "Zoom to Main Tile"],
+              ["Mod + Ctrl + Space", "Toggle Floating"],
             ];
             gen_table("Window Control", rows, "30%");
           </script>
