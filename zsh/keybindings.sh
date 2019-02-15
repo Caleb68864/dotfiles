@@ -98,3 +98,12 @@ function run_newsboat() {
 	}
 	zle -N add_sudo
 	bindkey "^s" add_sudo
+
+# Run Last Command with Sudo
+	function run_sudo() {
+		BUFFER="sudo !!"
+		zle end-of-line
+		zle accept-line
+	}
+	zle -N run_sudo
+	bindkey "^S" run_sudo
