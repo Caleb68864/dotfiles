@@ -3,38 +3,39 @@
 <head>
   <style media="screen">
     body {
-          	background-color: black;
-		color: white;
-	  	font-family: Arial, Helvetica, sans-serif;
-        }
+      background-color: black;
+	  color: white;
+	  font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;  
+    }
     .centered {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          margin-top: -50px;
-          margin-left: -100px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -100px;
     }
     #main{
-		    width: 100%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        margin-right: auto;
-		    margin-left: auto;
+	  width: 100%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-right: auto;
+	  margin-left: auto;
 		/*background-color: red;*/
 	  }
     #main_left, #main_right{
-      width: 45%;
+      width: 48%;
       display:inline-block;
   		vertical-align: top;
     }
     #main_left{
       float: left;
-      margin-left: 3%;
+      margin-left: 1%;
 		    /* background-color: red; */
 	  }
     #main_right{
       float: right;
-      margin-right: 3%;
+      margin-right: 1%;
 		    /* background-color: blue; */
 	  }
     h1 {
@@ -57,10 +58,10 @@
     text-align: center;
   }
 	.w_left {
-		width: 32%;
+		width: 37%;
 	}
 	.w_center {
-		width: 40%;
+		width: 35%;
 	}
 	.w_right {
 		width: 27%;
@@ -156,7 +157,7 @@
               ["Mod + Shift + Left", "Move Window to Previous Tag"],
               ["Mod + Shift + Right", "Move Window to Next Tag"],
             ];
-            gen_table("Tag Control", rows, "40%");
+            gen_table("Tag Control", rows, "45%");
           </script>
         </div>
         <div class="w_center">
@@ -174,7 +175,7 @@
               ["Mod + i", "Increase # of Split Windows in Master"],
               ["Mod + d", "Decrease # of Split Windows in Master"],
             ];
-            gen_table("Layout Control", rows, "25%");
+            gen_table("Layout Control", rows, "30%");
 
             rows = [
               ["Mod + Shift + c", "Close Window"],
@@ -333,7 +334,7 @@
               ["Ctrl + h", "Walk Back in History"],
               ["Ctrl + l", "Walk Forward in History"],
             ];
-            gen_table("Page Navigation", rows, "30%");
+            gen_table("Page Navigation", rows, "20%");
           </script>
         </div>
         <div class="s_center">
