@@ -1,23 +1,3 @@
-# Main Session
-function run_main() { 
-		BUFFER="tmux switch-client -t Main"
-		#zle reset-prompt
-		zle end-of-line
-		zle accept-line
-	}
-	zle -N run_main
-	bindkey "^m" run_main
-
-# Scratchpad Session
-function run_scratchpad() { 
-		BUFFER="tmux switch-client -t ScratchPad"
-		#zle reset-prompt
-		zle end-of-line
-		zle accept-line
-	}
-	zle -N run_scratchpad
-	bindkey "^p" run_scratchpad
-
 # ranger	
 function run_ranger() { 
 		BUFFER="ranger"
