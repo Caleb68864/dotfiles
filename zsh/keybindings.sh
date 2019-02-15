@@ -1,3 +1,23 @@
+# Main Session
+function run_main() { 
+		BUFFER="tmux switch-client -t Main"
+		#zle reset-prompt
+		zle end-of-line
+		zle accept-line
+	}
+	zle -N run_main
+	bindkey "^m" run_main
+
+# Scratchpad Session
+function run_scratchpad() { 
+		BUFFER="tmux switch-client -t ScratchPad"
+		#zle reset-prompt
+		zle end-of-line
+		zle accept-line
+	}
+	zle -N run_scratchpad
+	bindkey "^p" run_scratchpad
+
 # ranger	
 function run_ranger() { 
 		BUFFER="ranger"
@@ -8,7 +28,7 @@ function run_ranger() {
 	zle -N run_ranger
 	bindkey "^f" run_ranger
 
-# ranger	
+# NewsBoat	
 function run_newsboat() { 
 		#BUFFER="tmux new-session -A -s NewsBoat /snap/bin/newsboat"
         #BUFFER="tmux new-window -n NewsBoat /snap/bin/newsboat && tmux find-window -N NewsBoat"
@@ -52,7 +72,7 @@ function run_newsboat() {
 
 # home
 	function goto_home() { 
-		BUFFER="cd ~/"$BUFFER
+		BUFFER="cd ~/"
 		zle end-of-line
 		zle accept-line
 	}
