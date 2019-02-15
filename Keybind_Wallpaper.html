@@ -147,6 +147,16 @@
               ["Mod + Shift + m", "Spawn PianoBar"],
             ];
             gen_table("Spawn Apps", rows, "48%");
+
+            rows = [
+              ["Mod + &ltnum&gt", "Switch to Tag &ltnum&gt"],
+              ["Mod + Shift + &ltnum&gt", "Move Window to Tag &ltnum&gt"],
+              ["Mod + Left", "Switch to Previous Tag"],
+              ["Mod + Right", "Switch to Next Tag"],
+              ["Mod + Shift + Left", "Move Window to Previous Tag"],
+              ["Mod + Shift + Right", "Move Window to Next Tag"],
+            ];
+            gen_table("Tag Control", rows, "40%");
           </script>
         </div>
         <div class="w_center">
@@ -161,18 +171,10 @@
               ["Mod + Ctrl + .", "Cycle Layout Right"],
               ["Mod + Shift + j", "Rotate Stack Left"],
               ["Mod + Shift + k", "Rotate Stack Right"],
+              ["Mod + i", "Increase # of Split Windows in Master"],
+              ["Mod + d", "Decrease # of Split Windows in Master"],
             ];
             gen_table("Layout Control", rows, "25%");
-
-            rows = [
-              ["Mod + &ltnum&gt", "Switch to Tag &ltnum&gt"],
-              ["Mod + Shift + &ltnum&gt", "Move Window to Tag &ltnum&gt"],
-              ["Mod + Left", "Switch to Previous Tag"],
-              ["Mod + Right", "Switch to Next Tag"],
-              ["Mod + Shift + Left", "Move Window to Previous Tag"],
-              ["Mod + Shift + Right", "Move Window to Next Tag"],
-            ];
-            gen_table("Tag Control", rows, "40%");
 
             rows = [
               ["Mod + Shift + c", "Close Window"],
@@ -182,9 +184,8 @@
               ["Mod + h", "Expand Left"],
               ["Mod + l", "Expand Right"],
               ["Mod + Return", "Zoom to Main Tile"],
-              ["Mod + Ctrl + Space", "Toggle Floating"],
             ];
-            gen_table("Window Control", rows, "30%");
+            gen_table("Tiled Window Control", rows, "30%");
           </script>
         </div>
         <div class="w_right">
@@ -196,6 +197,13 @@
               ["Mod + b", "Toggle Status bar"],
             ];
             gen_table("Misc.", rows, "48%");
+
+            rows = [
+              ["Mod + Ctrl + Space", "Toggle Floating"],
+              ["Mod + Mouse 1", "Move Window"],
+              ["Mod + Mouse 2", "Resize Window"],
+            ];
+            gen_table("Floating Window Control", rows, "48%");
           </script>
         </div>
       </div>
