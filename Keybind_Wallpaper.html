@@ -98,11 +98,11 @@
 	.table_header {
 		text-align: center;
 		font-weight: bold;
-		/*
+		
 		background-color: white;
 		color: black;
-		border: 1px black solid;
-		*/
+		border: 1px white solid;
+		
 	}
     </style>
   <script type="text/javascript">
@@ -217,6 +217,18 @@
               ["Ctrl + n", "Run NewsBoat"],
             ];
             gen_table("Run Apps", rows, "20%");
+            
+            rows = [
+              ["agu", "apt update, upgrade, autoremove"],
+              ["agi", "apt install"],
+              ["agr", "apt remove"],
+              ["acs", "apt-cache serach"],
+              ["pmu", "pacman -Syy"],
+              ["pmup","pacman -Su"],
+              ["pms", "pacman -Ss"],
+              ["pmuS", "pacman -S"],
+            ];
+            gen_table("Aliases", rows, "20%");
           </script>
         </div>
         <div class="z_center">
