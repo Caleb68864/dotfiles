@@ -32,6 +32,11 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
         #cat /home/pi/Storage/Commute/Commute.txt;
     }
     alias a2wp="add2weprojects"
+	# Edit to weekend projects text file
+    edit_weprojects() {
+        vim /home/pi/Storage/Documents/Weekend_Projects.txt;
+    }
+    alias editwp="edit_weprojects"
 	# Add link to commute text file
     add2commute() {
         echo $1 >> /home/pi/Storage/Commute/Commute.txt;
