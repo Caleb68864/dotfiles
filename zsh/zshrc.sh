@@ -25,6 +25,11 @@
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
+	# Add line to youtube-dl archive text file
+    add2ytdl() {
+        /home/pi/dotfiles/Scripts/add2ytdl.py "$1";
+    }
+    alias a2dl="add2ytdl"
 	# Add line to weekend projects text file
     add2weprojects() {
         echo $1 >> /home/pi/Storage/Documents/Weekend_Projects.txt;
