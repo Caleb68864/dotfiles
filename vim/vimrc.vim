@@ -11,6 +11,11 @@ Plug 'gabrielelana/vim-markdown'
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
+" Indent Python
+" This indentation script for python tries to match more closely what is
+" suggested in PEP 8 (http://www.python.org/peps/pep-0008.html). 
+Plug 'vim-scripts/indentpython.vim'
+
 " Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
@@ -51,6 +56,7 @@ call plug#end()
 	set dir=/tmp/
 	set relativenumber 
 	set number
+    set encoding=utf-8
 
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
@@ -114,7 +120,22 @@ call plug#end()
 
 	" Markup
 		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
-
+    " Python
+        autocmd BufNewFile,BufRead *.py set tabstop=4
+            \ softtabstop=4
+            \ shiftwidth=4
+            \ textwidth=79
+            \ expandtab
+            \ autoindent
+            \ fileformat=unix
+    "    au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+        
+    " HTML, JS, CSS
+        autocmd BufNewFile,BufRead *.js, *.html, *.css 
+            \ set tabstop=2
+            \ softtabstop=2
+            \ shiftwidth=2
+    
 " File and Window Management 
 	inoremap <leader>w <Esc>:w<CR>
 	nnoremap <leader>w :w<CR>
