@@ -40,6 +40,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 	# Edit to weekend projects text file
     edit_weprojects() {
         vim /home/pi/Storage/Documents/Weekend_Projects.txt;
+        sort /home/pi/Storage/Documents/Weekend_Projects.txt -o /home/pi/Storage/Documents/Weekend_Projects.txt;
     }
     alias editwp="edit_weprojects"
 	# Add link to commute text file
