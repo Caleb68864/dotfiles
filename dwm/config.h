@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
 	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
 	{ "Vivaldi-stable",  NULL,       NULL,       1,            0,           -1 },
+	{ "Vivaldi",         NULL,       NULL,       1,            0,           -1 },
 	{ "Surf",            NULL,       NULL,       1,            0,           -1 },
 	{ NULL,              NULL,       "st",       2,            0,           -1 },
 	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
