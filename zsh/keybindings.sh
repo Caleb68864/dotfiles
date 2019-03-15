@@ -1,3 +1,14 @@
+# Find and Run Script on current buffer
+function fr_script() {
+        command=$(du -a ~/Scripts | awk {'print $2}' | fzf)
+        BUFFER="$command "
+		zle reset-prompt
+		zle end-of-line
+		#zle accept-line
+}
+	zle -N fr_script
+	bindkey "^e" fr_script
+
 # ranger	
 function run_ranger() { 
 		BUFFER="ranger"
