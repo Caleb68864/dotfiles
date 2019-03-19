@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -50,11 +50,11 @@ static const Rule rules[] = {
 	{ "Filezilla",       NULL,       NULL,           1 << 2,       0,           -1 },
 	{ "vlc",             NULL,       NULL,           1 << 3,       0,           -1 },
 	{ "mpv",             NULL,       NULL,           1 << 3,       0,           -1 },
-	{ "Pithos",          NULL,       NULL,           1 << 4,       0,           -1 },
-	{ NULL,              NULL,       "pianobar",     1 << 4,       0,           -1 },
-	{ "mpd",             NULL,       NULL,           1 << 4,       0,           -1 },
+	{ "Zathura",         NULL,       NULL,           1 << 4,       0,           -1 },
 	{ "Remmina",         NULL,       NULL,           1 << 5,       0,           -1 },
-	{ "Zathura",         NULL,       NULL,           1 << 6,       0,           -1 },
+	{ "Pithos",          NULL,       NULL,           1 << 6,       0,           -1 },
+	{ NULL,              NULL,       "pianobar",     1 << 6,       0,           -1 },
+	{ "mpd",             NULL,       NULL,           1 << 6,       0,           -1 },
 	{ "KeePass",         NULL,       NULL,           1 << 7,       0,           -1 },
 	{ NULL,              NULL,       "*KeePass",     1 << 7,       0,           -1 },
 	{ "Steam",           "Steam",    NULL,           1 << 8,       0,           -1 },

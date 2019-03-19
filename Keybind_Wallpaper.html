@@ -1,6 +1,6 @@
 <html>
-
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  
   <style media="screen">
     body {
       background-color: black;
@@ -15,18 +15,33 @@
       margin-top: -50px;
       margin-left: -100px;
     }
-    #main{
+    #main {
 	  width: 100%;
-      margin-top: 5%;
+      margin-top: 1%;
       margin-bottom: 5%;
       margin-right: auto;
 	  margin-left: auto;
 		/*background-color: red;*/
 	  }
+    #bottom{
+	  width: 100%;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      margin-right: auto;
+	  margin-left: auto;
+      display:inline-block;
+      vertical-align: top;
+    }
+	#bottom td {
+        font-size: 50px;
+	}
+	#bottom .table_header {
+        font-size: 75px;
+	}
     #main_left, #main_right{
       width: 48%;
       display:inline-block;
-  		vertical-align: top;
+      vertical-align: top;
     }
     #main_left{
       float: left;
@@ -44,7 +59,7 @@
 	table {
 		width: 100%;
 		padding-bottom: 10px;
-        font-size: larger;
+        font-size: 25px;
 	}
 	tr, td {
 		border: 1px white solid;
@@ -105,6 +120,9 @@
 		border: 1px white solid;
 		
 	}
+    .desktop{
+        width: 11%;
+    }
     </style>
   <script type="text/javascript">
     function table_row(kb, command, left_col) {
@@ -131,6 +149,33 @@
 </head>
 
 <body>
+  <div id="bottom">
+        <h1 align="center">Desktops</h1>
+        <table>
+            <tr class="table_header">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td class="kb desktop"><i class="fab fa-chrome"></i> Web Browser</td>
+                <td class="kb desktop"><i class="fab fa-terminal"></i> Terminal</td>
+                <td class="kb desktop"><i class="fab fa-folder-open"></i> File Manager</td>
+                <td class="kb desktop"><i class="fab fa-play-circle"></i> Videos</td>
+                <td class="kb desktop"><i class="fab fa-book"></i> Documents</td>
+                <td class="kb desktop"><i class="fab fa-desktop"></ Remote Desktop</td>
+                <td class="kb desktop"><i class="fab fa-music"></i> Music</td>
+                <td class="kb desktop"><i class="fab fa-key"></i> Security</td>
+                <td class="kb desktop"><i class="fab fa-gamepad"></i> Games</td>
+            </tr>
+        </table>
+  </div>
   <div id="main" class="">
     <div id="main_left" class="">
       <div id="wm">
