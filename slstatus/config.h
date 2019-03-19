@@ -61,9 +61,10 @@ static const char unknown_str[] = "n/a";
  */
 /*char WIFI[50] = "~/dotfiles/slstatus/get_wifi";*/
 /*char WIFI[50] = "wlp3s0";*/
-char WIFI[50] = "wlp1s0";
-/*char Battery[10] = "BAT0";*/
-char Battery[10] = "BATC";
+/*char WIFI[50] = "wlp1s0";*/
+char WIFI[50] = "wlan0";
+char Battery[10] = "BAT0";
+/*char Battery[10] = "BATC";*/
 char Volume[50] = "~/dotfiles/slstatus/get_volume";
 static const struct arg args[] = {
 	/* function format          argument */

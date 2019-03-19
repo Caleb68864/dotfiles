@@ -1,4 +1,9 @@
 #!/bin/bash
+sinks=$(command -v pacmd)
+if [ -z $sinks  ]
+then
+    echo "No Pacmd"
+else
 muted=$(awk '/muted/ {print $2}' <(pacmd list-sinks))
 if [ $muted != "yes" ]
 then
@@ -6,4 +11,5 @@ then
     echo "|"$volume
 else
     echo ""
+fi
 fi
