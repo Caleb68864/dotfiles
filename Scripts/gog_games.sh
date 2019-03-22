@@ -7,6 +7,8 @@ if [ -d "$gog" ]; then
 
     if [ -d "$command" ]; then
         st -e ranger "$command"
+    elif [ ${command: -4} == ".pdf" ]; then
+        zathura "$command"
     else    
         "$command"
     fi
