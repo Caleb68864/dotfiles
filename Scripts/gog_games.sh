@@ -9,6 +9,8 @@ if [ -d "$gog" ]; then
         st -e ranger "$command"
     elif [ ${command: -4} == ".pdf" ]; then
         zathura "$command"
+    elif [ ${command: -4} == ".txt" ]; then
+        vim "$command"
     else    
         "$command"
     fi

@@ -31,6 +31,6 @@
 [submodule "vim/plugged/vim-markdown"]
     path = vim/plugged/vim-markdown
     url = https://github.com/gabrielelana/vim-markdown
-[submodule "vim/plugged/indentpython"]
-    path = vim/plugged/indentpython
+[submodule "vim/plugged/indentpython.vim"]
+    path = vim/plugged/indentpython.vim
     url = https://github.com/vim-scripts/indentpython.vim
