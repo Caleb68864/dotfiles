@@ -17,6 +17,8 @@
     alias pmS="sudo pacman -S"
     alias gog_games="$HOME/dotfiles/Scripts/gog_games.sh"
     alias md2pdf="$HOME/dotfiles/Scripts/md2pdf.sh"
+    alias editmd2pdf="$HOME/dotfiles/Scripts/editmd2pdf.sh"
+    alias restartNewsBoat="$HOME/dotfiles/Scripts/restartNewsBoat.sh"
 
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
