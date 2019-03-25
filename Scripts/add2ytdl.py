@@ -20,14 +20,25 @@ for arg in args:
     url = url.replace("//",'/')
     parts = url.split("/")
 #    print(url)
-    line = "{} {}\n".format(parts[0], parts[1])
+    url_line = "{} {}\n".format(parts[0], parts[1])
 #    print(line)
 
     files = [
             "/home/pi/.temp/Commute/downloadedCommute.txt",
-            "/home/pi/.temp/Commute/downloadedShows.txt",
+#            "/home/pi/.temp/Commute/downloadedShows.txt",
             ]
 
     for file in files:
-        with open(file, "a") as txtfile:
-            txtfile.write(line)  
+        lines_seen = set() # holds lines already seen 
+        readFile = open(file, "r")
+        for line in readFile:     
+            if line not in lines_seen: # not a duplicate         
+                lines_seen.add(line)
+        readFile.close()
+        outfile = open(file, "a") 
+        #outfile.writelines(lines_seen)
+        if url_line not in lines_seen:
+            outfile.write(url_line) 
+        outfile.close()
+        #with open(file, "a") as txtfile:
+        #   txtfile.write(line) 
