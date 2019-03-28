@@ -57,6 +57,8 @@ call plug#end()
 	set relativenumber 
 	set number
     set encoding=utf-8
+    set spelllang=en
+
 
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold

@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 import sys
 
-args = sys.argv
-args = args[1:]
-for arg in args:
-#    print(arg)
-    url = "https://www.youtube.com/watch?v=rPp3EfbxmC0"
-    url = arg
-#    print(url)
+def parseURL(url):
+    #https://youtu.be/5AH98p5b7to
+    url = url.replace("https://www.youtube.com/watch?v=",'youtube/')
+    url = url.replace("https://youtu.be",'youtube')
+    url = url.replace("http://youtu.be",'youtube')
+    url = url.replace("youtu.be",'youtube')
     url = url.replace("https://www.",'')
     url = url.replace("http://www.",'')
     url = url.replace("https://",'')
@@ -21,6 +20,14 @@ for arg in args:
     parts = url.split("/")
 #    print(url)
     url_line = "{} {}\n".format(parts[0], parts[1])
+    return url_line
+
+args = sys.argv
+args = args[1:]
+for arg in args:
+#    print(arg)
+    url_line = parseURL(arg)
+#    print(url)
 #    print(line)
 
     files = [
@@ -42,3 +49,19 @@ for arg in args:
         outfile.close()
         #with open(file, "a") as txtfile:
         #   txtfile.write(line) 
+    
+        dc = "/home/pi/Commute/Commute.txt"
+        dcLines = []
+        dcRead = open(dc, "r")
+        for dcLine in dcRead:
+            dcLine = dcLine.replace("\n", "")
+            dcURL = parseURL(dcLine)
+            #print(dcURL)
+            if dcURL not in lines_seen:
+                dcLines.append(dcLine)
+        #print(dcLines)
+        dcRead.close()
+        dcWrite = open(dc, "w") 
+        for dcl in dcLines:
+            dcWrite.write(dcl)
+        dcWrite.close()
