@@ -12,5 +12,9 @@ fi
 
 echo "Updating configuration"
 #(cd ~/dotfiles && time_out 3 git pull && time_out 3 git submodule update --init --recursive)
+if ps ax | grep -v grep | grep git > /dev/null; then
+sleep 3
+else
 (cd ~/dotfiles && git pull && git submodule update --init --recursive)
+fi
 source ~/dotfiles/zsh/zshrc.sh
