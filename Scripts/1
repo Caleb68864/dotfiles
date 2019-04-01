@@ -1,0 +1,27 @@
+folder="$1"
+if [ -d "$folder" ]; then
+    contents=$(du --max-depth=1 "$folder" | awk '{for (i=2; i<NF; i++) print $i " " $NF}' | rofi -dmenu)
+    echo $(du --max-depth=1 "$folder" | awk '{for (i=2; i<NF; i++) print $i " " $NF}')
+    #echo $contents
+    command=$(du -a --max-depth=1 "$contents" | awk '{for (i=2; i<NF; i++) print $i " " $NF}' | rofi -dmenu)
+    #echo $command
+    if [ -n $command ]; then
+        if [ -d "$command" ]; then
+            st -e ranger "$command"
+        elif [ ${command: -4} == ".pdf" ]; then
+            zathura "$command"
+        elif [ ${command: -4} == ".txt" ]; then
+            vim "$command"
+        elif [ ${command: -4} == ".mp4" ]; then
+            mpv "$command"
+        elif [ ${command: -5} == ".webm" ]; then
+            mpv "$command"
+        elif [ ${command: -4} == ".sh" ]; then
+            "$command"
+    else    
+            "$command"
+        fi
+    fi
+else
+    echo "$folder Does Not Exists"
+fi

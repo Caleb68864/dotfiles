@@ -64,6 +64,7 @@ static const Rule rules[] = {
 	{ "Pithos",                      NULL,      NULL,           1 << 6,       0,           -1 },
 	{ NULL,                          NULL,      "pianobar",     1 << 6,       0,           -1 },
 	{ "mpd",                         NULL,      NULL,           1 << 6,       0,           -1 },
+	{ "Gpodder",                     NULL,      NULL,           1 << 6,       0,           -1 },
 	{ "KeePass",                     NULL,      NULL,           1 << 7,       0,           -1 },
 	{ NULL,                          NULL,      "*KeePass",     1 << 7,       0,           -1 },
 	{ "Steam",                       "Steam",   NULL,           1 << 8,       0,           -1 },
