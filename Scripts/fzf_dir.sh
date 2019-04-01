@@ -1,15 +1,6 @@
 folder="$1"
 if [ -d "$folder" ]; then
-    #echo $(du --max-depth=1 "$folder" | awk '{for (i=2; i<NF; i++) print $i " " $NF}')
-    #echo $(du --max-depth=1 "$folder")
-    #echo $(du --max-depth=1 "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}')
-    #echo $(ls "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}')
-    #echo $(ls "$folder" | awk '{print }')
-    #contents=$(du -a --max-depth=1 "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}' | rofi -dmenu)
-    #echo $contents
-    #if [ -n "$contents" ]; then
-    #command=$(du -a --max-depth=1 "$contents" | awk '{print (NF>2) ? $2 " " $NF : $2}' | rofi -dmenu)
-    command=$(du -a --max-depth=1 "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}' | rofi -dmenu)
+    command=$(du -a --max-depth=1 "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}' | fzf)
     #echo $command
     if [ -n "$command" ]; then
         if [ -d "$command" ]; then

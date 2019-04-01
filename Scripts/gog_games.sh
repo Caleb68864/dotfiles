@@ -1,1 +1,1 @@
-$HOME/dotfiles/Scripts/rofi_dir.sh "$HOME/GOG Games/"
+$HOME/dotfiles/Scripts/rofi_fzf.sh "$HOME/GOG Games/" #"rofi -dmenu"
