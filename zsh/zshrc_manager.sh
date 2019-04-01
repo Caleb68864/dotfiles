@@ -12,9 +12,13 @@ fi
 
 echo "Updating configuration"
 #(cd ~/dotfiles && time_out 3 git pull && time_out 3 git submodule update --init --recursive)
-if ps ax | grep -v grep | grep git > /dev/null; then
-sleep 3
-else
+while [ -e "~/dotfiles/.git/index.lock" ]
+do    
+    sleep 2
+done
+while [ $(ps ax | grep -v grep | grep git > /dev/null) ]
+do    
+    sleep 2
+done
 (cd ~/dotfiles && git pull && git submodule update --init --recursive)
-fi
 source ~/dotfiles/zsh/zshrc.sh
