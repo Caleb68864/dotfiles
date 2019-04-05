@@ -10,15 +10,11 @@ else
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
 
-echo "Updating configuration"
 #(cd ~/dotfiles && time_out 3 git pull && time_out 3 git submodule update --init --recursive)
-while [ -e "~/dotfiles/.git/index.lock" ]
-do    
-    sleep 2
-done
-while [ $(ps ax | grep -v grep | grep git > /dev/null) ]
-do    
-    sleep 2
-done
-(cd ~/dotfiles && git pull && git submodule update --init --recursive)
+#while [ $(ps ax | grep -v grep | grep git > /dev/null) ]
+#do    
+#    sleep 2
+#done
+#echo "Updating configuration"
+#(cd ~/dotfiles && git pull && git submodule update --init --recursive) > /dev/null
 source ~/dotfiles/zsh/zshrc.sh
