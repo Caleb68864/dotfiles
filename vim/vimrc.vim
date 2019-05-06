@@ -1,3 +1,4 @@
+set nocompatible
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -165,4 +166,3 @@ call plug#end()
 " Future stuff
 	"Swap line
 	"Insert blank below and above
-
