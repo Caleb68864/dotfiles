@@ -27,32 +27,48 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "7", "8", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class             instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",            NULL,       NULL,       0,            1,           -1 },
-	{ "Inkscape",        NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",         NULL,       NULL,       1,            0,           -1 },
-	{ "Google-chrome",   NULL,       NULL,       1,            0,           -1 },
-	{ "Vivaldi-stable",  NULL,       NULL,       1,            0,           -1 },
-	{ "Surf",            NULL,       NULL,       1,            0,           -1 },
-	{ NULL,              NULL,       "st",       2,            0,           -1 },
-	{ "Terminator",      NULL,       NULL,       2,            0,           -1 },
-	{ "URxvt",           NULL,       NULL,       2,            0,           -1 },
-	{ "Xterm",           NULL,       NULL,       2,            0,           -1 },
-	{ NULL,              NULL,       "ranger",   1 << 2,       0,           -1 },
-	{ "vlc",             NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "mpv",             NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Pithos",          NULL,       NULL,       1 << 4,       0,           -1 },
-	{ NULL,              NULL,       "pianobar", 1 << 4,       0,           -1 },
-	{ "mpd",             NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Remmina",         NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "Steam",           "Steam",    NULL,       1 << 8,       0,           -1 },
+	/* class                         instance       title       tags mask     isfloating   monitor */
+	{ "Gimp",                        NULL,      NULL,           0,            1,           -1 },
+	{ "Inkscape",                    NULL,      NULL,           0,            1,           -1 },
+	{ "Firefox",                     NULL,      NULL,           1,            0,           -1 },
+	{ "Google-chrome",               NULL,      NULL,           1,            0,           -1 },
+	{ "Vivaldi-stable",              NULL,      NULL,           1,            0,           -1 },
+	{ "Vivaldi",                     NULL,      NULL,           1,            0,           -1 },
+	{ "Surf",                        NULL,      NULL,           1,            0,           -1 },
+	{ NULL,                          NULL,      "st",           2,            0,           -1 },
+	{ "Terminator",                  NULL,      NULL,           2,            0,           -1 },
+	{ "URxvt",                       NULL,      NULL,           2,            0,           -1 },
+	{ "Xterm",                       NULL,      NULL,           2,            0,           -1 },
+	{ NULL,                          NULL,      "ranger",       1 << 2,       0,           -1 },
+	{ "Filezilla",                   NULL,      NULL,           1 << 2,       0,           -1 },
+	{ "vlc",                         NULL,      NULL,           1 << 3,       0,           -1 },
+	{ "mpv",                         NULL,      NULL,           1 << 3,       0,           -1 },
+	{ "calibre",                     NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "libreoffice",                 NULL,      NULL,           1 << 4,       0,           -1 },
+	{ NULL,                          NULL,      "LibreOffice",           1 << 4,       0,           -1 },
+	{ "libreoffice-startcenter",     NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "libreoffice-writer",          NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "libreoffice-calc",            NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "libreoffice-impress",         NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "libreoffice-draw",            NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "libreoffice-math",            NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "Zathura",                     NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "Remmina",                     NULL,      NULL,           1 << 5,       0,           -1 },
+	{ "Pithos",                      NULL,      NULL,           1 << 6,       0,           -1 },
+	{ NULL,                          NULL,      "pianobar",     1 << 6,       0,           -1 },
+	{ "mpd",                         NULL,      NULL,           1 << 6,       0,           -1 },
+	{ "Gpodder",                     NULL,      NULL,           1 << 6,       0,           -1 },
+	{ "KeePass",                     NULL,      NULL,           1 << 7,       0,           -1 },
+	{ NULL,                          NULL,      "*KeePass",     1 << 7,       0,           -1 },
+	{ "Steam",                       "Steam",   NULL,           1 << 8,       0,           -1 },
+	{ "Steam",                       NULL,      "Friends List", 1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -94,7 +110,7 @@ static const char *termcmd[]  = { "st", NULL };
 /* static const char *webcmd[]  = { "google-chrome", NULL };*/
 /*For Arch change to above for ubuntu*/
 /*static const char *webcmd[]  = { "google-chrome-stable", NULL };*/
-static const char *webcmd[]  = { "vivaldi", NULL };
+static const char *webcmd[]  = { "vivaldi-stable", NULL };
 static const char *surfcmd[]  = { "surf", NULL };
 /*static const char *pithoscmd[]  = { "pithos", NULL };*/
 static const char *pianobarcmd[] = { "st", "-e", "pianobar", NULL };
@@ -144,12 +160,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ControlMask,    		XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
-	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
-	{ MODKEY,                       XK_p,      setlayout,      {0} },
-	/*{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },*/
-	{ MODKEY|ShiftMask,             XK_p,      togglefloating, {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_space,  setlayout,      {0} },
+	{ MODKEY|ControlMask,           XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+    { MODKEY,                       XK_Left,   cycle,          {.i = -1 } }, /* Cycle to Previous Tag */
+    { MODKEY,                       XK_Right,  cycle,          {.i = +1 } }, /* Cycle to Next Tag */
+    { MODKEY|ShiftMask,             XK_Left,   tagcycle,       {.i = -1 } }, /* Move Focsed Window to Previous Tag */
+    { MODKEY|ShiftMask,             XK_Right,  tagcycle,       {.i = +1 } }, /* Move Focsed Window to Next Tag */
 	{ MODKEY,                       XK_period, focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = -1 } },

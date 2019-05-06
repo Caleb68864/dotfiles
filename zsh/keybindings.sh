@@ -27,7 +27,7 @@ function run_newsboat() {
         #echo $BUFFER
         if [ -z "$BUFFER" ];
             then
-                BUFFER="tmux new-window -n NewsBoat /snap/bin/newsboat"
+                BUFFER="tmux new-window -n NewsBoat newsboat"
         fi	
         #zle reset-prompt
 		zle end-of-line
