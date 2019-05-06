@@ -120,6 +120,8 @@ static const char *lockcmd[]  = { "slock", NULL };
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *voldwncmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *brightupcmd[]  = { "xbacklight", "-inc", "10", NULL };
+static const char *brightdwncmd[]  = { "xbacklight", "-dec", "10", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "tmux", "attach-session", "-t", "ScratchPad", NULL };
 
@@ -141,6 +143,8 @@ static Key keys[] = {
 	{ 0,         XF86XK_AudioMute,             spawn,          {.v = volmutecmd } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volupcmd } },
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldwncmd } },
+	{ 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = brightupcmd } },
+	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = brightdwncmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
