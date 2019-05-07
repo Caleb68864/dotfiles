@@ -2,9 +2,9 @@
 file="$1"
 if [ -f "$file" ] && [ -n "$file" ]; then
     name="${file%%.*}"
-    pandoc -s "$file" -o "$name.html"  
+    pandoc --metadata title="$name" -T "$name"  -s "$file" -o "$name.html"  
     if [ -f "$name.html" ]; then
-        wkhtmltopdf --keep-relative-links -q "$name.html" "$name.pdf" 
+        wkhtmltopdf --title "$name" --keep-relative-links -q "$name.html" "$name.pdf" 
         rm "$name.html"   
     fi
     #sudo chmod 777 -R *
