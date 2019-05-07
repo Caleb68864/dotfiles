@@ -1,5 +1,5 @@
 #!/bin/bash
-killline="entr -p $HOME/dotfiles/Scripts/md2pdf.sh $1"
+killline="entr -n -p $HOME/dotfiles/Scripts/md2pdf.sh $1"
 # echo $killline
 pkill -f "$killline" 
 echo "$1" | entr -n -p $HOME/dotfiles/Scripts/md2pdf.sh "$1" > /dev/null & 
