@@ -19,7 +19,7 @@ if [ -d "$folder" ]; then
         if [ -d "$command" ]; then
             #st -e ranger "$command"
             #echo $command
-            $HOME/dotfiles/Scripts/rofi_dir.sh "$command" "$oc"
+            $HOME/dotfiles/Scripts/rofi_fzf.sh "$command" "$oc"
         elif [ ${command: -4} == ".pdf" ]; then
             zathura "$command"
         elif [ ${command: -4} == ".txt" ]; then

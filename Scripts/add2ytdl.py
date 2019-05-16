@@ -16,8 +16,10 @@ def parseURL(url):
     url = url.replace("watch?v=",'')
     url = url.replace("/video/",'/')
     url = url.replace("?playlist=",'/')
+    url = url.replace("///",'/')
     url = url.replace("//",'/')
-    parts = url.split("/")
+    url = url.replace("/",'|')
+    parts = url.split("|")
 #    print(url)
     url_line = "{} {}\n".format(parts[0], parts[1])
     return url_line
@@ -26,8 +28,12 @@ args = sys.argv
 args = args[1:]
 for arg in args:
 #    print(arg)
-    url_line = parseURL(arg)
-#    print(url)
+    #url_line = parseURL(arg)
+    if not arg:
+        url_line = "|"
+    else:    
+        url_line = parseURL(arg)
+#    print(url_line)
 #    print(line)
 
     files = [
@@ -54,8 +60,8 @@ for arg in args:
         dcLines = []
         dcRead = open(dc, "r")
         for dcLine in dcRead:
-            dcLine = dcLine.replace("\n", "")
-            dcURL = parseURL(dcLine)
+            dcLineTest = dcLine.replace("\n", "")
+            dcURL = parseURL(dcLineTest)
             #print(dcURL)
             if dcURL not in lines_seen:
                 dcLines.append(dcLine)

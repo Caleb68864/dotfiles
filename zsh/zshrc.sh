@@ -56,11 +56,13 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
     # Download Commute Playlist
     download_playlist() {
         python3 /home/pi/Scripts/get_commute.py;
+        /home/pi/dotfiles/Scripts/add2ytdl.py;
     }
     alias dcp="download_playlist"
     # Download Commute File
     download_file() {
         bash /home/pi/Scripts/commuteFile.sh;
+        /home/pi/dotfiles/Scripts/add2ytdl.py;
     }
     alias dcf="download_file"
     # Download Commute Playlist & File
