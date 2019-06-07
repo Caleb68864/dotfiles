@@ -61,15 +61,15 @@ static const char unknown_str[] = "n/a";
  */
 /*char WIFI[50] = "~/dotfiles/slstatus/get_wifi";*/
 /*char WIFI[50] = "wlp3s0";*/
-/*char WIFI[50] = "wlp1s0";*/
-char WIFI[50] = "wlan0";
-char Battery[10] = "BAT0";
-/*char Battery[10] = "BATC";*/
+char WIFI[50] = "wlp1s0";
+/*char WIFI[50] = "wlan0";*/
+/*char Battery[10] = "BAT0";*/
+char Battery[10] = "BATC";
 char Volume[50] = "~/dotfiles/slstatus/get_volume";
 char Weather[75] = "~/dotfiles/slstatus/get_weather";
 static const struct arg args[] = {
 	/* function format          argument */
-    /*{ run_command,       "%s|",        Weather},*/
+    { run_command,       "%s|",        Weather},
 	{ wifi_essid,        " %s|",       WIFI },
 	{ wifi_perc,         "%s%% ",      WIFI },
 	{ battery_state,     "%s|",        Battery },
