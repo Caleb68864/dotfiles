@@ -1,3 +1,5 @@
+#!/bin/bash
+
 folder="$1"
 oc="$2"
 if [ -z $oc ]; then
@@ -13,7 +15,8 @@ if [ -d "$folder" ]; then
     #echo $contents
     #if [ -n "$contents" ]; then
     #command=$(du -a --max-depth=1 "$contents" | awk '{print (NF>2) ? $2 " " $NF : $2}' | rofi -dmenu)
-    command=$(du -a --max-depth=1 "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}' | $oc)
+    #command=$(du -a --max-depth=1 "$folder" | awk '{print (NF>2) ? $2 " " $NF : $2}' | $oc)
+    command=$(du -a --max-depth=1 "$folder" | awk '{$1="";print $0}' | sed 's/\ //' | $oc)
     #echo $command
     if [ -n "$command" ]; then
         if [ -d "$command" ]; then
