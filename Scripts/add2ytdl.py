@@ -3,6 +3,7 @@ import sys
 
 def parseURL(url):
     #https://youtu.be/5AH98p5b7to
+    url = url.replace("&feature=youtu.be",'')
     url = url.replace("https://www.youtube.com/watch?v=",'youtube/')
     url = url.replace("https://youtu.be",'youtube')
     url = url.replace("http://youtu.be",'youtube')
