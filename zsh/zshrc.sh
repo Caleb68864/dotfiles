@@ -31,38 +31,39 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 #Functions
 	# Add line to youtube-dl archive text file
     add2ytdl() {
-        /home/pi/dotfiles/Scripts/add2ytdl.py "$1";
+        ~/dotfiles/Scripts/add2ytdl.py "$1";
     }
     alias a2dl="add2ytdl"
 	# Add line to weekend projects text file
     add2weprojects() {
-        echo $1 >> /home/pi/Storage/Documents/Weekend_Projects.txt;
-        sort /home/pi/Storage/Documents/Weekend_Projects.txt -o /home/pi/Storage/Documents/Weekend_Projects.txt;
-        #cat /home/pi/Storage/Commute/Commute.txt;
+        echo $1 >> ~/Documents/Weekend_Projects.txt;
+        sort ~/Documents/Weekend_Projects.txt -o ~/Documents/Weekend_Projects.txt;
+        #cat ~/Commute/Commute.txt;
     }
     alias a2wp="add2weprojects"
 	# Edit to weekend projects text file
     edit_weprojects() {
-        vim /home/pi/Storage/Documents/Weekend_Projects.txt;
-        sort /home/pi/Storage/Documents/Weekend_Projects.txt -o /home/pi/Storage/Documents/Weekend_Projects.txt;
+        vim ~/Documents/Weekend_Projects.txt;
+        sort ~/Documents/Weekend_Projects.txt -o ~/Documents/Weekend_Projects.txt;
     }
     alias editwp="edit_weprojects"
 	# Add link to commute text file
     add2commute() {
-        echo $1 >> /home/pi/Storage/Commute/Commute.txt;
-        #cat /home/pi/Storage/Commute/Commute.txt;
+        echo $1 >> ~/Commute/Commute.txt;
+        ~/dotfiles/Scripts/add2ytdl.py;
+        #cat ~/Commute/Commute.txt;
     }
     alias a2c="add2commute"
     # Download Commute Playlist
     download_playlist() {
-        python3 /home/pi/Scripts/get_commute.py;
-        /home/pi/dotfiles/Scripts/add2ytdl.py;
+        python3 ~/Scripts/get_commute.py;
+        ~/dotfiles/Scripts/add2ytdl.py;
     }
     alias dcp="download_playlist"
     # Download Commute File
     download_file() {
-        bash /home/pi/Scripts/commuteFile.sh;
-        /home/pi/dotfiles/Scripts/add2ytdl.py;
+        bash ~/Scripts/commuteFile.sh;
+        ~/dotfiles/Scripts/add2ytdl.py;
     }
     alias dcf="download_file"
     # Download Commute Playlist & File
