@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	{ "Vivaldi-stable",              NULL,      NULL,           1,            0,           -1 },
 	{ "Vivaldi",                     NULL,      NULL,           1,            0,           -1 },
 	{ "Surf",                        NULL,      NULL,           1,            0,           -1 },
+	{ "Chromium",                    NULL,      NULL,           1,            0,           -1 },
 	{ NULL,                          NULL,      "st",           2,            0,           -1 },
 	{ "Terminator",                  NULL,      NULL,           2,            0,           -1 },
 	{ "URxvt",                       NULL,      NULL,           2,            0,           -1 },
