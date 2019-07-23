@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -s https://wttr.in/Harvard+NE?format=4
+curl -s https://wttr.in/harvard+ne?format=4
