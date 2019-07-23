@@ -1,15 +1,22 @@
 #!/bin/bash
-sinks=$(command -v pacmd)
-if [ -z $sinks  ]
+pa=$(command -v pacmd)
+if [ -z $pa  ]
 then
     echo "No Pacmd"
 else
-muted=$(awk '/muted/ {print $2}' <(pacmd list-sinks))
-if [ $muted != "yes" ]
-then
-    volume=$(awk '/volume/ {print $5;exit}' <(pacmd list-sinks))
-    echo "|"$volume
-else
-    echo ""
+    sinks="$(pulseaudio --check)"
+    if [[ $sinks == "" ]]
+    then
+        echo "No Daemon"
+    else
+        muted=$(awk '/muted/ {print $2}' <(pacmd list-sinks))
+        if [[ $muted != "yes" ]]
+        then
+            volume=$(awk '/volume/ {print $5;exit}' <(pacmd list-sinks))
+            echo "|"$volume
+        else
+            echo ""
+        fi
+    fi
 fi
-fi
+

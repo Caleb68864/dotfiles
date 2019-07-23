@@ -1,0 +1,10 @@
+#!/bin/bash
+batt=$(acpi) 
+batt=$(echo $batt | sed -e "s/Battery [0-9]\: //")
+batt=$(echo $batt | sed -e "s/Discharging, /-|/") 
+batt=$(echo $batt | sed -e "s/Charging, /+|/") 
+batt=$(echo $batt | sed -e "s/, / /")
+batt=$(echo $batt | sed -e "s/ remaining//")
+batt=$(echo $batt | sed -e "s/ until charged//")
+batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)\:[0-9][0-9]/\1/")
+echo $batt 

@@ -1,3 +1,3 @@
 #!/bin/bash
-wifi=$(iw dev | awk '$1=="Interface"{print $2}')
-echo $wifi
+wifi=$(nmcli -t -f active,ssid,signal dev wifi | egrep '^yes' | cut -d\' -f2 | sed -e "s/\yes://" | sed -e "s/\:/|/")
+echo $wifi%
