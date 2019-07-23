@@ -7,4 +7,6 @@ batt=$(echo $batt | sed -e "s/, / /")
 batt=$(echo $batt | sed -e "s/ remaining//")
 batt=$(echo $batt | sed -e "s/ until charged//")
 batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)\:[0-9][0-9]/\1/")
+batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)/\1m/")
+batt=$(echo $batt | sed -e  "s/\:/h /")
 echo $batt 
