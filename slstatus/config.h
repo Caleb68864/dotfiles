@@ -60,7 +60,6 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 char Volume[50] = "~/dotfiles/slstatus/get_volume";
-<<<<<<< HEAD
 char Weather[75] = "~/dotfiles/slstatus/get_weather";
 char WIFI[75] = "~/dotfiles/slstatus/get_wifi";
 char Battery[75] = "~/dotfiles/slstatus/get_battery";
@@ -68,18 +67,7 @@ static const struct arg args[] = {
 	/* function format          argument */
     /* { run_command,       "%s|",        Weather}, */
     { run_command,       "%s",         WIFI},
-    { run_command,       " %s",         Battery},
-=======
-/*char Weather[75] = "~/dotfiles/slstatus/get_weather";*/
-static const struct arg args[] = {
-	/* function format          argument */
-    /*{ run_command,       "%s|",        Weather},*/
-	{ wifi_essid,        " %s|",       WIFI },
-	{ wifi_perc,         "%s%% ",      WIFI },
-	{ battery_state,     "%s|",        Battery },
-	{ battery_perc,      "%s%%",       Battery },
-	{ battery_remaining, " %s",        Battery },
->>>>>>> a7d254f58a6161065a0f174f8485565a7d1735ab
+    { run_command,       " %s",        Battery},
     { run_command,       " %s",        Volume},
 	{ datetime,          " %s",         "%A %B %d, %Y-%H:%M:%S" },
 	/*{ vol_perc,          " %s",        Mixer },*/
