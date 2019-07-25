@@ -14,6 +14,7 @@ else
     batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)\:[0-9][0-9]/\1/")
     batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)/\1m/")
     batt=$(echo $batt | sed -e  "s/\:/h /")
-    batt=$(echo $batt | sed -e  "s/Unknown/Bat:/")
+    batt=$(echo $batt | sed -e  "s/Unknown /Bat|/")
+    batt=$(echo $batt | sed -e  "s/Unknown/Bat|/")
 fi
 echo $batt 
