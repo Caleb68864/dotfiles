@@ -35,7 +35,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                         instance       title       tags mask     isfloating   monitor */
-	{ "Wfica_Seamless",              NULL,      NULL,           0,            1,           -1 },
+	{ "Wfica_Seamless",              NULL,      NULL,           0,            0,           -1 },
+	{ "Wfica_Seamless",              NULL,      "Notification Area",          0,            1,           -1 },
 	{ "Gimp",                        NULL,      NULL,           0,            1,           -1 },
 	{ "Inkscape",                    NULL,      NULL,           0,            1,           -1 },
 	{ "Firefox",                     NULL,      NULL,           1,            0,           -1 },
@@ -178,15 +179,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_1,      focusmon,       {.i = 0 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_2,      focusmon,       {.i = 1 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_3,      focusmon,       {.i = 2 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_4,      focusmon,       {.i = 3 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_5,      focusmon,       {.i = 4 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_6,      focusmon,       {.i = 5 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_7,      focusmon,       {.i = 6 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_8,      focusmon,       {.i = 7 } },
-	{ MODKEY|ShiftMask|ControlMask, XK_9,      focusmon,       {.i = 8 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

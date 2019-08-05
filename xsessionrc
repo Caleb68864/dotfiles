@@ -1,4 +1,9 @@
 #!/bin/bash
 ( sleep 3 & slstatus ) &
 compton &
-feh  --bg-scale ~/dotfiles/KB_Wall.jpg
+feh  --bg-scale ~/dotfiles/KB_Wall.jpg &
+
+#Makes pycharm work with DWM
+export _JAVA_AWT_WM_NONREPARENTING=1 &
+export AWT_TOOLKIT=MToolkit &
+wmname LG3D &

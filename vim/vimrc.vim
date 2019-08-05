@@ -47,6 +47,10 @@ Plug 'vim-scripts/indentpython.vim'
 " Initialize plugin system
 call plug#end()
 
+"Funcitons
+"Sort Text Separated by Spaces
+:command SortLine call setline('.', join(sort(split(getline('.'), ' ')), " "))
+
 " General Vim settings
 	syntax on
 	let mapleader=","
