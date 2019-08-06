@@ -1,4 +1,16 @@
 #Functions
+    # Start and Enable Service
+    sc_start_enable() {
+        sudo systemctl start $1;
+        sudo systemctl enable $1;
+    }
+    alias sc_st_en="sc_start_enable"
+    # Stop and Disable Service
+    sc_stop_disable() {
+        sudo systemctl stop $1;
+        sudo systemctl disable $1;
+    }
+    alias sc_st_ds="sc_stop_disable"
 	# Add line to youtube-dl archive text file
     add2ytdl() {
         ~/dotfiles/Scripts/add2ytdl.py "$1";
