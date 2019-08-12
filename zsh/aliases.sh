@@ -16,7 +16,7 @@
     alias sc_restart="sudo systemctl restart"
     alias sc_enable="sudo systemctl enable"
     alias sc_disable="sudo systemctl disable"
-    alias sc_status="sudo systemctl start"
+    alias sc_status="sudo systemctl status"
     alias gog_games="$HOME/dotfiles/Scripts/gog_games.sh"
     alias md2pdf="$HOME/dotfiles/Scripts/md2pdf.sh"
     alias editmd2pdf="$HOME/dotfiles/Scripts/editmd2pdf.sh"

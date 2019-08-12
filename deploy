@@ -99,6 +99,11 @@ mkdir -p ~/.vim/autoload
 cp -r "$HOME/dotfiles/vim/fonts" ~/.vim/
 cp -r "$HOME/dotfiles/vim/autoload/" ~/.vim/
 cp "$HOME/dotfiles/xsessionrc" ~/.xsessionrc
+ln -s ~/.xsessionrc ~/.xprofile
+ln -s ~/.xsessionrc ~/.xinitrc
+sudo chmod +x ~/.xsessionrc ~/.xprofile
+sudo chmod +x ~/.xsessionrc ~/.xinitrc
+
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
 cp -r "$HOME/dotfiles/fonts" ~/.local/share/

@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo pacman -Syy
 sudo pacman -Su
-sudo pacman -S acpi aria2 cronie dmenu fakeroot feh firefox fuse fuse-common fzf gcc git go htop make markdown mpv networkmanager openssh python python-pip ranger rofi sudo tigervnc tmux vim vlc vsftpd wkhtmltopdf xorg xorg-server xorg-xinit youtube-dl zathura zsh
+sudo pacman -S acpi aria2 compton cronie dmenu fakeroot feh firefox fuse fuse-common fzf gcc git go htop make markdown mpv networkmanager openssh python python-pip ranger rofi sudo tigervnc tmux vim vlc vsftpd wkhtmltopdf xorg xorg-server xorg-xinit youtube-dl zathura zsh
 
 sudo pip install bs4 numpy pandas youtube-dl
 
@@ -11,6 +11,7 @@ yay -S xorgxrdp xrdp
 
 mkdir -p ~/.local/share
 mkdir -p ~/.temp/Commute
+mkdir -p ~/.temp/Videos
 mkdir -p ~/.config
 mkdir -p ~/.fonts
 
