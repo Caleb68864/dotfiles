@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import sys
+from pathlib import Path
+
+home = str(Path.home())
 
 def parseURL(url):
     #https://youtu.be/5AH98p5b7to
@@ -38,7 +41,8 @@ for arg in args:
 #    print(line)
 
     files = [
-            "/home/pi/.temp/Commute/downloadedCommute.txt",
+            "{}/.temp/Commute/downloadedCommute.txt".format(home),
+#            "/home/pi/.temp/Commute/downloadedCommute.txt",
 #            "/home/pi/.temp/Commute/downloadedShows.txt",
             ]
 
@@ -57,7 +61,7 @@ for arg in args:
         #with open(file, "a") as txtfile:
         #   txtfile.write(line) 
     
-        dc = "/home/pi/Commute/Commute.txt"
+        dc = "{}/Commute/Commute.txt".format(home)
         dcLines = []
         dcRead = open(dc, "r")
         for dcLine in dcRead:

@@ -96,9 +96,11 @@ printf "source '$HOME/dotfiles/zsh/zshrc_manager.sh'" > ~/.zshrc
 printf "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
 mkdir -p ~/.vim
 mkdir -p ~/.vim/autoload
+mkdir -p ~/.config/sxhkd
 cp -r "$HOME/dotfiles/vim/fonts" ~/.vim/
 cp -r "$HOME/dotfiles/vim/autoload/" ~/.vim/
 cp "$HOME/dotfiles/xsessionrc" ~/.xsessionrc
+cp "$HOME/dotfiles/sxhkd/sxhkdrc_universal" ~/.config/sxhkd/sxhkdrc
 ln -s ~/.xsessionrc ~/.xprofile
 ln -s ~/.xsessionrc ~/.xinitrc
 sudo chmod +x ~/.xsessionrc ~/.xprofile
