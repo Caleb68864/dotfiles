@@ -7,7 +7,7 @@ sudo pip install bs4 numpy pandas youtube-dl
 
 ~/dotfiles/install_scripts/Arch/yay_setup.sh
 
-yay -S xorgxrdp xrdp
+yay -S xorgxrdp xrdp vivaldi google-chrome
 
 mkdir -p ~/.local/share
 mkdir -p ~/.temp/Commute
