@@ -10,6 +10,7 @@ source ~/dotfiles/zsh/aliases.sh
 
 # Settings
 	export VISUAL=vim
+    export PATH=$HOME/dotfiles/Scripts:$PATH
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
