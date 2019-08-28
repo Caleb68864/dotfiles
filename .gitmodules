@@ -34,3 +34,6 @@
 [submodule "vim/plugged/indentpython.vim"]
     path = vim/plugged/indentpython.vim
     url = https://github.com/vim-scripts/indentpython.vim
+[submodule "Vundle.vim"]
+	path = vim/bundle/Vundle.vim
+	url = /home/caleb/dotfiles/vim/bundle/Vundle.vim
