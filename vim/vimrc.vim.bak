@@ -1,58 +1,51 @@
-set nocompatible              " required
-filetype off                  " required
+set nocompatible
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/dotfiles/vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
-call vundle#begin()
-"
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-"
-" " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"
-" " add all your plugins here (note older versions of Vundle
-" " used Bundle instead of Plugin)
+" Make sure you use single quotes
 
-Plugin 'tmhedberg/SimpylFold'
+" Markdown Plugin
+Plug 'gabrielelana/vim-markdown'
 
-Plugin 'vim-scripts/indentpython.vim'
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
 
-"Bundle 'Valloric/YouCompleteMe'
+" Indent Python
+" This indentation script for python tries to match more closely what is
+" suggested in PEP 8 (http://www.python.org/peps/pep-0008.html). 
+Plug 'vim-scripts/indentpython.vim'
 
-Plugin 'vim-syntastic/syntastic'
+" Any valid git URL is allowed
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-Plugin 'nvie/vim-flake8'
+" Multiple Plug commands can be written in a single line using | separators
+"Plug 'SirVer/ultisnips' 
+" | 
+"Plug 'honza/vim-snippets'
 
-Plugin 'scrooloose/nerdtree'
+" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-Plugin 'jistr/vim-nerdtree-tabs'
+" Using a non-master branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-Plugin 'kien/ctrlp.vim'
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+" Plug 'fatih/vim-go', { 'tag': '*' }
 
-Plugin 'tpope/vim-fugitive'
+" Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
-" " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" YouCompleMe Settings
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
 
-"python with virtualenv support
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-"  project_base_dir = os.environ['VIRTUAL_ENV']
-"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"  execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-" Hide pyc files in nerdtree
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
+" Initialize plugin system
+call plug#end()
 
 "Funcitons
 "Sort Text Separated by Spaces
@@ -75,6 +68,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
+	" enable all Python syntax highlighting features 
+	let python_highlight_all = 1
 
 	set hlsearch
 	nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
@@ -88,19 +83,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 	nnoremap L $
 	nnoremap J G
 	nnoremap K gg
-
-    "split navigations
-    nnoremap <C-J> <C-W><C-J>
-    nnoremap <C-K> <C-W><C-K>
-    nnoremap <C-L> <C-W><C-L>
-    nnoremap <C-H> <C-W><C-H>
-
-    " Enable folding
-    set foldmethod=indent
-    set foldlevel=99
-
-    " Enable folding with the spacebar
-    nnoremap <space> za
 
 	map <tab> %
 
@@ -146,9 +128,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 	" Markup
 		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
     " Python
-	    " enable all Python syntax highlighting features 
-	    let python_highlight_all = 1
-        syntax on
         autocmd BufNewFile,BufRead *.py set tabstop=4
             \ softtabstop=4
             \ shiftwidth=4
@@ -156,7 +135,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
             \ expandtab
             \ autoindent
             \ fileformat=unix
-        au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+    "    au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
         
     " HTML, JS, CSS
         autocmd BufNewFile,BufRead *.js, *.html, *.css 
