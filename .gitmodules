@@ -13,27 +13,27 @@
 [submodule "st"]
 	path = st
     url = https://github.com/LukeSmithxyz/st.git
-[submodule "vim/plugged/YCM-Generator"]
-    path = vim/plugged/YCM-Generator
-    url = https://github.com/rdnetto/YCM-Generator
-[submodule "vim/plugged/nerdtree"]
-    path = vim/plugged/nerdtree
-    url = https://github.com/scrooloose/nerdtree
-[submodule "vim/plugged/ultisnips"]
-    path = vim/plugged/ultisnips
-    url = https://github.com/SirVer/ultisnips
-[submodule "vim/plugged/vim-snippets"]
-    path = vim/plugged/vim-snippets
-    url = https://github.com/honza/vim-snippets
-[submodule "vim/plugged/vim-easy-align"]
-    path = vim/plugged/vim-easy-align
-    url = https://github.com/junegunn/vim-easy-align
-[submodule "vim/plugged/vim-markdown"]
-    path = vim/plugged/vim-markdown
-    url = https://github.com/gabrielelana/vim-markdown
-[submodule "vim/plugged/indentpython.vim"]
-    path = vim/plugged/indentpython.vim
-    url = https://github.com/vim-scripts/indentpython.vim
-[submodule "Vundle.vim"]
-	path = vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim 
+#[submodule "vim/bundle/YCM-Generator"]
+#    path = vim/bundle/YCM-Generator
+#    url = https://github.com/rdnetto/YCM-Generator
+#[submodule "vim/bundle/nerdtree"]
+#    path = vim/bundle/nerdtree
+#    url = https://github.com/scrooloose/nerdtree
+#[submodule "vim/bundle/ultisnips"]
+#    path = vim/bundle/ultisnips
+#    url = https://github.com/SirVer/ultisnips
+#[submodule "vim/bundle/vim-snippets"]
+#    path = vim/bundle/vim-snippets
+#    url = https://github.com/honza/vim-snippets
+#[submodule "vim/bundle/vim-easy-align"]
+#    path = vim/bundle/vim-easy-align
+#    url = https://github.com/junegunn/vim-easy-align
+#[submodule "vim/bundle/vim-markdown"]
+#    path = vim/bundle/vim-markdown
+#    url = https://github.com/gabrielelana/vim-markdown
+#[submodule "vim/bundle/indentpython.vim"]
+#    path = vim/bundle/indentpython.vim
+#    url = https://github.com/vim-scripts/indentpython.vim
+#[submodule "Vundle.vim"]
+#	path = vim/bundle/Vundle.vim
+#	url = https://github.com/VundleVim/Vundle.vim 
