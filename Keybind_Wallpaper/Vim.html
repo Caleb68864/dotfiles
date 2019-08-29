@@ -1,0 +1,105 @@
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="./fontawesome/css/all.css">  
+    <link rel="stylesheet" href="./KB.css">  
+    <script src="./Functions.js"></script>
+</head>
+
+<body>
+    <div id="vim">
+    <h1 align="center">Vim</h1>
+    <div class="v_left">
+      <script>
+        rows = [
+          ["i", "Insert Before Cursor"],
+          ["Shift + i", "Insert at Beginning of Line"],
+          ["a", "Insert After Cursor"],
+          ["Shift + a", "Insert at the End of Line"],
+          ["o", "Insert New Line Below Cursor"],
+          ["Shift + o", "Insert New Line Above Cursor"],
+        ];
+        gen_table("Text Manipulation - Insert", rows, "25%");
+        rows = [
+          ["r", "Replace Single Character"],
+          ["cc", "Replace Line"],
+          ["cw", "Replace to End of Word"],
+          ["c$", "Replace to End of Line"],
+        ];
+        gen_table("Text Manipulation - Replace", rows, "25%");
+        rows = [
+          ["y", "Yank/Copy"],
+          ["yy", "Yank Line"],
+          ["yw", "Yank Word"],
+          ["y$", "Yank to End of Line"],
+          ["p", "Paste"],
+          ["Shift + p", "Paste Before Cursor"],
+        ];
+        gen_table("Text Manipulation - Copy/Paste", rows, "25%");
+        rows = [
+          ["u", "Undo"],
+          ["Ctrl + r", "Redo"],
+          ["/string", 'Search for "string"'],
+        ];
+        gen_table("Text Manipulation - Misc", rows, "25%");
+      </script>
+    </div>
+    <div class="v_center">
+      <script>
+        rows = [
+          ["dd", "Delete/Cut Line"],
+          ["dw", "Delete a Word"],
+          ["Shift + d", "Delete to End of Line"],
+          ["x", "Delete Character"],
+        ];
+        gen_table("Text Manipulation - Delete", rows, "25%");
+        rows = [
+          ["ZZ", "Save and Quit"],
+          ["ZQ", "Quit without Saving"],
+          [":w", "Write/Save"],
+          [":wq or :x", "Write and Quit"],
+          [":q!", "Quit without Saving"],
+          [":qa", "Quit All Vim Buffers"],
+        ];
+        gen_table("Save & Exit", rows, "25%");
+      rows = [
+        [":%s/foo/bar/g", "Find each occurrence of 'foo' (in all lines), and replace it with 'bar'."],
+        [":s/foo/bar/g", "Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'."],
+        [":%s/foo/bar/gc", "Change each 'foo' to 'bar', but ask for confirmation first."],
+        [":%s/\<foo\>/bar/gc", "Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation."],
+        [":%s/foo/bar/gci", "Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation."],
+      ];
+      gen_table("Search and Replace", rows, "25%");
+      </script>
+    </div>
+    <div class="v_right">
+      <script>
+        rows = [
+          ["k", "Move Cursor Up"],
+          ["Shift + k or gg", "Jump to First Line in Document"],
+          ["j", "Move Cursor Down"],
+          ["Shift + J or G", "Jump to Last Line in Document"],
+          ["h", "Move Cursor Left"],
+          ["Shift + h or 0", "Move to Begining of Line"],
+          ["b", "Move to Begining of Previos Word"],
+          ["Shift + b", "Move to Begining of Previos Word (inc. punctuation)"],
+          ["l", "Move Cursor Right"],
+          ["Shift + l or $", "Move to End of Line"],
+          ["w", "Move to Begining of Next Word"],
+          ["Shift + w", "Move to Begining of Next Word (inc. punctuation)"],
+        ];
+        gen_table("Cursor Movement", rows, "26%");
+        rows = [
+          ["Ctrl + h", "Move Right"],
+          ["Ctrl + j", "Move Down"],
+          ["Ctrl + k", "Move Up"],
+          ["Ctrl + l", "Move Left"],
+        ];
+        gen_table("Split Movement", rows, "25%");
+      </script>
+    </div>
+    </div>
+</body>
+
+</html>

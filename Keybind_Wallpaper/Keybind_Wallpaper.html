@@ -124,6 +124,16 @@
             gen_table("Run Apps", rows, "20%");
             
             rows = [
+              ["Ctrl + k", "Move Up Directory"],
+              ["Ctrl + h", "Move to Home Directory"],
+              ["Ctrl + d", "Move to Documents Directory"],
+            ];
+            gen_table("Directory Movement", rows, "20%");
+          </script>
+        </div>
+        <div class="z_center">
+          <script>
+            rows = [
               ["clear_ls", "clear , ls"],
               ["rm_ls", "rm, clear , ls"],
               ["agu", "apt update, upgrade, autoremove"],
@@ -136,16 +146,6 @@
               ["pmuS", "pacman -S"],
             ];
             gen_table("Aliases", rows, "20%");
-          </script>
-        </div>
-        <div class="z_center">
-          <script>
-            rows = [
-              ["Ctrl + k", "Move Up Directory"],
-              ["Ctrl + h", "Move to Home Directory"],
-              ["Ctrl + d", "Move to Documents Directory"],
-            ];
-            gen_table("Directory Movement", rows, "20%");
           </script>
         </div>
         <div class="z_right">
@@ -180,6 +180,12 @@
               ["w", "Choose Window"],
             ];
             gen_table("Window Control", rows, "30%");
+            rows = [
+              ["Shift + n", "Spawn NewsBoat"],
+              ["r", "Reload Source File"],
+              // [": setw synchronize-panes", "Toggle synchronize-panes(send command to all panes)"],
+            ];
+            gen_table("Misc.", rows, "30%");
 
           </script>
         </div>
@@ -196,6 +202,10 @@
             ["x", "Close Pane"],
           ];
           gen_table("Pane Control", rows, "30%");
+          </script>
+        </div>
+        <div class="t_right">
+          <script>
           rows = [
             ["h or Left", "Switch to the Left"],
             ["j or Up", "Switch Upward"],
@@ -206,16 +216,6 @@
             ["q + &ltnum&gt", "Switch/Select Pane by Number"],
           ];
           gen_table("Pane Movement", rows, "30%");
-          </script>
-        </div>
-        <div class="t_right">
-          <script>
-            rows = [
-              ["Shift + n", "Spawn NewsBoat"],
-              ["r", "Reload Source File"],
-              // [": setw synchronize-panes", "Toggle synchronize-panes(send command to all panes)"],
-            ];
-            gen_table("Misc.", rows, "30%");
           </script>
         </div>
       </div>
@@ -229,18 +229,63 @@
           ["Shift + i", "Insert at Beginning of Line"],
           ["a", "Insert After Cursor"],
           ["Shift + a", "Insert at the End of Line"],
+          ["o", "Insert New Line Below Cursor"],
+          ["Shift + o", "Insert New Line Above Cursor"],
         ];
-        gen_table("Text Manipulation", rows, "25%");
+        gen_table("Text Manipulation - Insert", rows, "25%");
         rows = [
-          ["Ctrl + h", "Move Right"],
-          ["Ctrl + j", "Move Down"],
-          ["Ctrl + k", "Move Up"],
-          ["Ctrl + l", "Move Left"],
+          ["r", "Replace Single Character"],
+          ["cc", "Replace Line"],
+          ["cw", "Replace to End of Word"],
+          ["c$", "Replace to End of Line"],
         ];
-        gen_table("Split Movement", rows, "25%");
+        gen_table("Text Manipulation - Replace", rows, "25%");
+        rows = [
+          ["y", "Yank/Copy"],
+          ["yy", "Yank Line"],
+          ["yw", "Yank Word"],
+          ["y$", "Yank to End of Line"],
+          ["p", "Paste"],
+          ["Shift + p", "Paste Before Cursor"],
+        ];
+        gen_table("Text Manipulation - Copy/Paste", rows, "25%");
+        rows = [
+          ["u", "Undo"],
+          ["Ctrl + r", "Redo"],
+          ["/string", 'Search for "string"'],
+        ];
+        gen_table("Text Manipulation - Misc", rows, "25%");
       </script>
     </div>
     <div class="v_center">
+      <script>
+        rows = [
+          ["dd", "Delete/Cut Line"],
+          ["dw", "Delete a Word"],
+          ["Shift + d", "Delete to End of Line"],
+          ["x", "Delete Character"],
+        ];
+        gen_table("Text Manipulation - Delete", rows, "25%");
+        rows = [
+          ["ZZ", "Save and Quit"],
+          ["ZQ", "Quit without Saving"],
+          [":w", "Write/Save"],
+          [":wq or :x", "Write and Quit"],
+          [":q!", "Quit without Saving"],
+          [":qa", "Quit All Vim Buffers"],
+        ];
+        gen_table("Save & Exit", rows, "25%");
+      rows = [
+        [":%s/foo/bar/g", "Find each occurrence of 'foo' (in all lines), and replace it with 'bar'."],
+        [":s/foo/bar/g", "Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'."],
+        [":%s/foo/bar/gc", "Change each 'foo' to 'bar', but ask for confirmation first."],
+        [":%s/\<foo\>/bar/gc", "Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation."],
+        [":%s/foo/bar/gci", "Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation."],
+      ];
+      gen_table("Search and Replace", rows, "25%");
+      </script>
+    </div>
+    <div class="v_right">
       <script>
         rows = [
           ["k", "Move Cursor Up"],
@@ -256,19 +301,14 @@
           ["w", "Move to Begining of Next Word"],
           ["Shift + w", "Move to Begining of Next Word (inc. punctuation)"],
         ];
-        gen_table("Cursor Movement", rows, "25%");
-      </script>
-    </div>
-    <div class="v_right">
-      <script>
-      rows = [
-        [":%s/foo/bar/g", "Find each occurrence of 'foo' (in all lines), and replace it with 'bar'."],
-        [":s/foo/bar/g", "Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'."],
-        [":%s/foo/bar/gc", "Change each 'foo' to 'bar', but ask for confirmation first."],
-        [":%s/\<foo\>/bar/gc", "Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation."],
-        [":%s/foo/bar/gci", "Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation."],
-      ];
-      gen_table("Search and Replace", rows, "25%");
+        gen_table("Cursor Movement", rows, "26%");
+        rows = [
+          ["Ctrl + h", "Move Right"],
+          ["Ctrl + j", "Move Down"],
+          ["Ctrl + k", "Move Up"],
+          ["Ctrl + l", "Move Left"],
+        ];
+        gen_table("Split Movement", rows, "25%");
       </script>
     </div>
     </div>
