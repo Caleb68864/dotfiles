@@ -111,6 +111,15 @@
 	.s_right {
 		width: 33%;
 	}
+  .v_left {
+		width: 33%;
+	}
+	.v_center {
+		width: 33%;
+	}
+	.v_right {
+		width: 33%;
+	}
 	.table_header {
 		text-align: center;
 		font-weight: bold;
@@ -357,6 +366,60 @@
               // [": setw synchronize-panes", "Toggle synchronize-panes(send command to all panes)"],
             ];
             gen_table("Misc.", rows, "30%");
+          </script>
+        </div>
+      </div>
+
+      <div id="vim">
+        <h1 align="center">Vim</h1>
+        <div class="v_left">
+          <script>
+            rows = [
+              ["i", "Insert Before Cursor"],
+              ["Shift + i", "Insert at Beginning of Line"],
+              ["a", "Insert After Cursor"],
+              ["Shift + a", "Insert at the End of Line"],
+            ];
+            gen_table("Text Manipulation", rows, "45%");
+          </script>
+        </div>
+        <div class="v_center">
+          <script>
+            rows = [
+              ["k", "Move Cursor Up"],
+              ["Shift + k or gg", "Jump to First Line in Document"],
+              ["j", "Move Cursor Down"],
+              ["Shift + J or G", "Jump to Last Line in Document"],
+              ["h", "Move Cursor Left"],
+              ["Shift + h or 0", "Move to Begining of Line"],
+              ["b", "Move to Begining of Previos Word"],
+              ["Shift + b", "Move to Begining of Previos Word (inc. punctuation)"],
+              ["l", "Move Cursor Right"],
+              ["Shift + l or $", "Move to End of Line"],
+              ["w", "Move to Begining of Next Word"],
+              ["Shift + w", "Move to Begining of Next Word (inc. punctuation)"],
+            ];
+            gen_table("Cursor Movement", rows, "35%");
+            rows = [
+              ["Ctrl + h", "Move Right"],
+              ["Ctrl + j", "Move Down"],
+              ["Ctrl + k", "Move Up"],
+              ["Ctrl + l", "Move Left"],
+            ];
+            gen_table("Split Movement", rows, "35%");
+          </script>
+        </div>
+        <div class="v_right">
+          <script>
+          rows = [
+            [":%s/foo/bar/g", "Find each occurrence of 'foo' (in all lines), and replace it with 'bar'."],
+            [":s/foo/bar/g", "Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'."],
+            [":%s/foo/bar/gc", "Change each 'foo' to 'bar', but ask for confirmation first."],
+            [":%s/\<foo\>/bar/gc", "Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation."],
+            [":%s/foo/bar/gci", "Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation."],
+            ["", ""],
+          ];
+          gen_table("Search and Replace", rows, "30%");
           </script>
         </div>
       </div>
