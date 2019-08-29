@@ -34,6 +34,6 @@
 #[submodule "vim/bundle/indentpython.vim"]
 #    path = vim/bundle/indentpython.vim
 #    url = https://github.com/vim-scripts/indentpython.vim
-#[submodule "Vundle.vim"]
-#	path = vim/bundle/Vundle.vim
-#	url = https://github.com/VundleVim/Vundle.vim 
+[submodule "Vundle.vim"]
+	path = vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim 
