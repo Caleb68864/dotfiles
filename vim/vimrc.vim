@@ -159,8 +159,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
         au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
         
     " HTML, JS, CSS
-        autocmd BufNewFile,BufRead *.js, *.html, *.css 
-            \ set tabstop=2
+        autocmd BufNewFile,BufRead *.js, *.html, *.css set tabstop=2
             \ softtabstop=2
             \ shiftwidth=2
     
