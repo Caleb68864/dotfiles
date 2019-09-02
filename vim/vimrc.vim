@@ -149,6 +149,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 	    " enable all Python syntax highlighting features 
 	    let python_highlight_all = 1
         syntax on
+        " Needs you complete me to work
+        "au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
         autocmd BufNewFile,BufRead *.py set tabstop=4
             \ softtabstop=4
             \ shiftwidth=4
@@ -156,7 +158,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
             \ expandtab
             \ autoindent
             \ fileformat=unix
-        au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
         
     " HTML, JS, CSS
         autocmd BufNewFile,BufRead *.js, *.html, *.css set tabstop=2
