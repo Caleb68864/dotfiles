@@ -20,10 +20,16 @@ source ~/dotfiles/zsh/functions.sh
 # For vim mappings: 
 	stty -ixon
 
+# Enable Advanced tab completion
+autoload -U compinint
+compinit
+
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/alias-finder/alias-finder.plugin.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/plugins/thefuck/thefuck.plugin.zsh
 #source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -115,5 +115,7 @@ cp -r "$HOME/dotfiles/youtube-dl/" ~/.config/
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
+sudo pip install thefuck
+
 echo
 echo "Please log out and log back in for default shell to be initialized."
