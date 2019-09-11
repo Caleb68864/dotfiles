@@ -1,6 +1,6 @@
 #!/bin/bash
 file="$1"
-sudo chmod 777 -R "$file"
+#sudo chmod 777 -R "$file"
 if [ -f "$file" ] && [ -n "$file" ]; then
     name="${file%%.*}"
     #pandoc --metadata title="$name" -T "$name"  -s "$file" -o "$name.html"  

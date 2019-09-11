@@ -21,8 +21,8 @@ source ~/dotfiles/zsh/functions.sh
 	stty -ixon
 
 # Enable Advanced tab completion
-autoload -U compinint
-compinit
+#autoload -Uz compinint
+#compinit
 
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
