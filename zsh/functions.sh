@@ -11,6 +11,12 @@
         sudo systemctl disable $1;
     }
     alias sc_st_ds="sc_stop_disable"
+    # Restart Service
+    sc_rs() {
+        sudo systemctl stop $1;
+        sudo systemctl start $1;
+    }
+    alias sc_restart="sc_rs"
 	# Add line to youtube-dl archive text file
     add2ytdl() {
         ~/dotfiles/Scripts/add2ytdl.py "$1";

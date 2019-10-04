@@ -13,7 +13,6 @@
     alias yayS="yay -S"
     alias sc_stop="sudo systemctl stop"
     alias sc_start="sudo systemctl start"
-    alias sc_restart="sudo systemctl restart"
     alias sc_enable="sudo systemctl enable"
     alias sc_disable="sudo systemctl disable"
     alias sc_status="sudo systemctl status"
