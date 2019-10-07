@@ -23,8 +23,8 @@
 #    path = vim/bundle/YCM-Generator
 #    url = https://github.com/rdnetto/YCM-Generator
 [submodule "vim/bundle/nerdtree"]
-    path = vim/bundle/nerdtree
-    url = https://github.com/scrooloose/nerdtree
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
 [submodule "vim/bundle/ultisnips"]
     path = vim/bundle/ultisnips
     url = https://github.com/SirVer/ultisnips
