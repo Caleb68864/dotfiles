@@ -13,30 +13,30 @@
 [submodule "st"]
 	path = st
     url = https://github.com/LukeSmithxyz/st.git
-#[submodule "vim/bundle/YCM-Generator"]
-#    path = vim/bundle/YCM-Generator
-#    url = https://github.com/rdnetto/YCM-Generator
-#[submodule "vim/bundle/nerdtree"]
-#    path = vim/bundle/nerdtree
-#    url = https://github.com/scrooloose/nerdtree
-#[submodule "vim/bundle/ultisnips"]
-#    path = vim/bundle/ultisnips
-#    url = https://github.com/SirVer/ultisnips
-#[submodule "vim/bundle/vim-snippets"]
-#    path = vim/bundle/vim-snippets
-#    url = https://github.com/honza/vim-snippets
-#[submodule "vim/bundle/vim-easy-align"]
-#    path = vim/bundle/vim-easy-align
-#    url = https://github.com/junegunn/vim-easy-align
-#[submodule "vim/bundle/vim-markdown"]
-#    path = vim/bundle/vim-markdown
-#    url = https://github.com/gabrielelana/vim-markdown
-#[submodule "vim/bundle/indentpython.vim"]
-#    path = vim/bundle/indentpython.vim
-#    url = https://github.com/vim-scripts/indentpython.vim
 [submodule "Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim 
 [submodule "rofi-menus"]
 	path = rofi-menus
 	url = https://gitlab.com/vahnrr/rofi-menus
+#[submodule "vim/bundle/YCM-Generator"]
+#    path = vim/bundle/YCM-Generator
+#    url = https://github.com/rdnetto/YCM-Generator
+[submodule "vim/bundle/nerdtree"]
+    path = vim/bundle/nerdtree
+    url = https://github.com/scrooloose/nerdtree
+[submodule "vim/bundle/ultisnips"]
+    path = vim/bundle/ultisnips
+    url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/vim-snippets"]
+    path = vim/bundle/vim-snippets
+    url = https://github.com/honza/vim-snippets
+[submodule "vim/bundle/vim-easy-align"]
+    path = vim/bundle/vim-easy-align
+    url = https://github.com/junegunn/vim-easy-align
+[submodule "vim/bundle/vim-markdown"]
+    path = vim/bundle/vim-markdown
+    url = https://github.com/gabrielelana/vim-markdown
+[submodule "vim/bundle/indentpython.vim"]
+    path = vim/bundle/indentpython.vim
+    url = https://github.com/vim-scripts/indentpython.vim
