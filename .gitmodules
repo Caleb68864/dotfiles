@@ -9,7 +9,7 @@
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "zsh/plugins/oh-my-zsh"]
 	path = zsh/plugins/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "st"]
 	path = st
     url = https://github.com/LukeSmithxyz/st.git
