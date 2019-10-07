@@ -40,3 +40,6 @@
 [submodule "vim/bundle/indentpython.vim"]
     path = vim/bundle/indentpython.vim
     url = https://github.com/vim-scripts/indentpython.vim
+[submodule "vim/bundle/SimpylFold"]
+	path = vim/bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
