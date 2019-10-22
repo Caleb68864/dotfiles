@@ -35,6 +35,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                         instance       title       tags mask     isfloating   monitor */
+	{ "Wfica_Seamless",              NULL,      NULL,           0,            0,           -1 },
+	{ "Wfica_Seamless",              NULL,      "Notification Area",          0,            1,           -1 },
 	{ "Gimp",                        NULL,      NULL,           0,            1,           -1 },
 	{ "Inkscape",                    NULL,      NULL,           0,            1,           -1 },
 	{ "Firefox",                     NULL,      NULL,           1,            0,           -1 },
@@ -42,6 +44,7 @@ static const Rule rules[] = {
 	{ "Vivaldi-stable",              NULL,      NULL,           1,            0,           -1 },
 	{ "Vivaldi",                     NULL,      NULL,           1,            0,           -1 },
 	{ "Surf",                        NULL,      NULL,           1,            0,           -1 },
+	{ "Chromium",                    NULL,      NULL,           1,            0,           -1 },
 	{ NULL,                          NULL,      "st",           2,            0,           -1 },
 	{ "Terminator",                  NULL,      NULL,           2,            0,           -1 },
 	{ "URxvt",                       NULL,      NULL,           2,            0,           -1 },
@@ -59,6 +62,8 @@ static const Rule rules[] = {
 	{ "libreoffice-impress",         NULL,      NULL,           1 << 4,       0,           -1 },
 	{ "libreoffice-draw",            NULL,      NULL,           1 << 4,       0,           -1 },
 	{ "libreoffice-math",            NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "okular",                      NULL,      NULL,           1 << 4,       0,           -1 },
+	{ "mupdf",                       NULL,      NULL,           1 << 4,       0,           -1 },
 	{ "Zathura",                     NULL,      NULL,           1 << 4,       0,           -1 },
 	{ "Remmina",                     NULL,      NULL,           1 << 5,       0,           -1 },
 	{ "Pithos",                      NULL,      NULL,           1 << 6,       0,           -1 },
@@ -67,8 +72,11 @@ static const Rule rules[] = {
 	{ "Gpodder",                     NULL,      NULL,           1 << 6,       0,           -1 },
 	{ "KeePass",                     NULL,      NULL,           1 << 7,       0,           -1 },
 	{ NULL,                          NULL,      "*KeePass",     1 << 7,       0,           -1 },
+	{ "keepassxc",                   NULL,      NULL,           1 << 7,       0,           -1 },
+	{ NULL,                          NULL,      "*keepassxc",   1 << 7,       0,           -1 },
 	{ "Steam",                       "Steam",   NULL,           1 << 8,       0,           -1 },
 	{ "Steam",                       NULL,      "Friends List", 1 << 8,       0,           -1 },
+	{ NULL,                          NULL,      "Stream",       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -120,6 +128,8 @@ static const char *lockcmd[]  = { "slock", NULL };
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *voldwncmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *brightupcmd[]  = { "xbacklight", "-inc", "10", NULL };
+static const char *brightdwncmd[]  = { "xbacklight", "-dec", "10", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "tmux", "attach-session", "-t", "ScratchPad", NULL };
 
@@ -141,6 +151,8 @@ static Key keys[] = {
 	{ 0,         XF86XK_AudioMute,             spawn,          {.v = volmutecmd } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volupcmd } },
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldwncmd } },
+	{ 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = brightupcmd } },
+	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = brightdwncmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -190,7 +202,7 @@ static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+	{ ClkWinTitle,          0,              Button1,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
