@@ -63,6 +63,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 :command SortLine call setline('.', join(sort(split(getline('.'), ' ')), " "))
 
 " General Vim settings
+    set spell
+    set spellfile=~/dotfiles/vim/spell/en.utf-8.add
 	syntax on
 	let mapleader=","
 	set autoindent
