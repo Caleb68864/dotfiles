@@ -22,6 +22,7 @@
     alias restartNewsBoat="$HOME/dotfiles/Scripts/restartNewsBoat.sh"
     alias docs="cd $HOME/Documents"
     alias untar="tar -zxvf"
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
