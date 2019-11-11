@@ -6,6 +6,7 @@ device=$(sudo blkid | awk '{print substr($1, 0, length($1) - 1)}' | fzf)
 if [ ! -z "$device" ]
 then
     d=$(date +%F_%H%M)
+    year=$(date +%Y)
 
     temp_dir=${d}_temp
 
@@ -25,6 +26,7 @@ then
     fi
 
     ~/dotfiles/Scripts/extract_pics.sh $temp_dir $d
+    rclone copy $d "GDrive:Game Cam/$year/$d" -P
 
     sudo umount $temp_dir
     rm -r $temp_dir

@@ -76,7 +76,7 @@ static const Rule rules[] = {
 	{ NULL,                          NULL,      "*keepassxc",   1 << 7,       0,           -1 },
 	{ "Steam",                       "Steam",   NULL,           1 << 8,       0,           -1 },
 	{ "Steam",                       NULL,      "Friends List", 1 << 8,       0,           -1 },
-	{ NULL,                          NULL,      "Stream",       1 << 8,       0,           -1 },
+	{ NULL,                          NULL,      "Steam",       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
