@@ -8,13 +8,16 @@ def parseURL(url):
     #https://youtu.be/5AH98p5b7to
     url = url.replace("&feature=youtu.be",'')
     url = url.replace("https://www.youtube.com/watch?v=",'youtube/')
+    url = url.replace("https://m.youtube.com/watch?v=",'youtube/')
+    url = url.replace("https://m.youtube.com",'youtube/')
     url = url.replace("https://youtu.be",'youtube')
     url = url.replace("http://youtu.be",'youtube')
     url = url.replace("youtu.be",'youtube')
     url = url.replace("https://www.",'')
     url = url.replace("http://www.",'')
+    url = url.replace("http://m.",'')
+    url = url.replace("https://m.",'')
     url = url.replace("https://",'')
-    url = url.replace("http://",'')
     url = url.replace("www.",'')
     url = url.replace(".com",'')
     url = url.replace("watch?v=",'')
@@ -36,7 +39,7 @@ args = args[1:]
 for arg in args:
 #    print(arg)
     #url_line = parseURL(arg)
-    if not arg:
+    if not arg or arg != "":
         url_line = "|"
     else:    
         url_line = parseURL(arg)

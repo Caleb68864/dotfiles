@@ -34,6 +34,8 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'junegunn/fzf'
+
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,6 +63,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 :command SortLine call setline('.', join(sort(split(getline('.'), ' ')), " "))
 
 " General Vim settings
+    set spell
+    set spellfile=~/dotfiles/vim/spell/en.utf-8.add
 	syntax on
 	let mapleader=","
 	set autoindent
