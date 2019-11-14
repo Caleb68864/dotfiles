@@ -116,6 +116,8 @@ cp -r "$HOME/dotfiles/youtube-dl/" ~/.config/
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
 sudo pip install thefuck
+git config --global user.name "Caleb Bennett"
+git config --global user.email "cbennett68864@gmail.com"
 
 echo
 echo "Please log out and log back in for default shell to be initialized."
