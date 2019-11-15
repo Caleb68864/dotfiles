@@ -100,7 +100,7 @@ mkdir -p ~/.config/sxhkd
 cp -r "$HOME/dotfiles/vim/fonts" ~/.vim/
 cp -r "$HOME/dotfiles/vim/autoload/" ~/.vim/
 cp "$HOME/dotfiles/xsessionrc" ~/.xsessionrc
-cp "$HOME/dotfiles/sxhkd/sxhkdrc_universal" ~/.config/sxhkd/sxhkdrc
+#cp "$HOME/dotfiles/sxhkd/sxhkdrc_universal" ~/.config/sxhkd/sxhkdrc
 ln -s ~/.xsessionrc ~/.xprofile
 ln -s ~/.xsessionrc ~/.xinitrc
 sudo chmod +x ~/.xsessionrc ~/.xprofile
@@ -112,6 +112,7 @@ cp -r "$HOME/dotfiles/fonts" ~/.local/share/
 fc-cache -f -v
 
 cp -r "$HOME/dotfiles/youtube-dl/" ~/.config/
+cp -r "$HOME/dotfiles/sxiv/" ~/.config/
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
