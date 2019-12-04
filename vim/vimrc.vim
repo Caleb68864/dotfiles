@@ -58,12 +58,11 @@ filetype plugin indent on    " required
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 
-"Funcitons
+"Functions
 "Sort Text Separated by Spaces
 :command SortLine call setline('.', join(sort(split(getline('.'), ' ')), " "))
 
 " General Vim settings
-    set spell
     set spellfile=~/dotfiles/vim/spell/en.utf-8.add
 	syntax on
 	let mapleader=","
@@ -78,6 +77,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
     set spelllang=en
 
 
+    nnoremap s :set spell<CR>
+    nnoremap S :set nospell<CR>
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
