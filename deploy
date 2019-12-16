@@ -111,8 +111,9 @@ printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 cp -r "$HOME/dotfiles/fonts" ~/.local/share/
 fc-cache -f -v
 
-cp -r "$HOME/dotfiles/youtube-dl/" ~/.config/
-cp -r "$HOME/dotfiles/sxiv/" ~/.config/
+ln -s "$HOME/dotfiles/youtube-dl/" ~/.config/
+ln -s "$HOME/dotfiles/sxiv/" ~/.config/
+ln -s "$HOME/dotfiles/vifm/" ~/.config/
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
