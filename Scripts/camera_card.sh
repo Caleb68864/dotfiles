@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo blkid
 device=$(blkid | awk '{print substr($1, 0, length($1) - 1)}' | fzf)
 
 #echo $device
