@@ -114,6 +114,7 @@ fc-cache -f -v
 ln -s "$HOME/dotfiles/youtube-dl/" ~/.config/
 ln -s "$HOME/dotfiles/sxiv/" ~/.config/
 ln -s "$HOME/dotfiles/vifm/" ~/.config/
+ln -s ~/dotfiles/rofi ~/.config/rofi
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 

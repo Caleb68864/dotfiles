@@ -134,6 +134,7 @@ static const char *brightupcmd[]  = { "xbacklight", "-inc", "10", NULL };
 static const char *brightdwncmd[]  = { "xbacklight", "-dec", "10", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "tmux", "attach-session", "-t", "ScratchPad", NULL };
+static const char *powercmd[]  = { "/home/caleb/dotfiles/Scripts/rofi-power.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -197,7 +198,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = powercmd } },
 };
 
 /* button definitions */
