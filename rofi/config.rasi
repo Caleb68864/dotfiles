@@ -8,4 +8,4 @@ configuration {
   display-drun:       "apps";
   columns: 2;
 }
-@import "/usr/share/rofi/themes/fancy.rasi"
+@import "~/.config/rofi/themes/fancy.rasi"
