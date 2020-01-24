@@ -30,9 +30,13 @@ then
         ;;
       Reboot)
         systemctl reboot
+        reboot
+        shutdown -r
         ;;
       Power-off)
         systemctl poweroff
+        poweroff
+        shutdown -h
         ;;
       Suspend)
         $($USE_LOCKER) && "$LOCKER"; systemctl suspend
