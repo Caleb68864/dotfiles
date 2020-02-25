@@ -29,14 +29,16 @@ then
         eval $1
         ;;
       Reboot)
+        sudo shutdown -r now
+        shutdown -r now
         systemctl reboot
         reboot
-        shutdown -r
         ;;
       Power-off)
+        sudo shutdown -h now
+        shutdown -h now
         systemctl poweroff
         poweroff
-        shutdown -h
         ;;
       Suspend)
         $($USE_LOCKER) && "$LOCKER"; systemctl suspend
