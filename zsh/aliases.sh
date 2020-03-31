@@ -21,6 +21,7 @@
     alias editmd2pdf="$HOME/dotfiles/Scripts/editmd2pdf.sh"
     alias restartNewsBoat="$HOME/dotfiles/Scripts/restartNewsBoat.sh"
     alias docs="cd $HOME/Documents"
+    alias ddbooks="cd $HOME/Documents/DD_Books"
     alias untar="tar -zxvf"
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias po="sudo poweroff"

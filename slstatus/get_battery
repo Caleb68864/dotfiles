@@ -1,20 +1,27 @@
-#!/bin/bash
-ac=$(command -v acpi)
-if [ -z $ac ]
-then
-    batt="No ACPI"
-else
-    batt=$(acpi) 
-    batt=$(echo $batt | sed -e "s/Battery [0-9]\: //")
-    batt=$(echo $batt | sed -e "s/Discharging, /-|/") 
-    batt=$(echo $batt | sed -e "s/Charging, /+|/") 
-    batt=$(echo $batt | sed -e "s/, / /")
-    batt=$(echo $batt | sed -e "s/ remaining//")
-    batt=$(echo $batt | sed -e "s/ until charged//")
-    batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)\:[0-9][0-9]/\1/")
-    batt=$(echo $batt | sed -e  "s/\([0-9][0-9]\:[0-9][0-9]\)/\1m/")
-    batt=$(echo $batt | sed -e  "s/\:/h /")
-    batt=$(echo $batt | sed -e  "s/Unknown /Bat|/")
-    batt=$(echo $batt | sed -e  "s/Unknown/Bat|/")
-fi
-echo $batt 
+#!/bin/sh
+
+# Prints all batteries, their percentage remaining and an emoji corresponding
+# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+
+case $BLOCK_BUTTON in
+    3) pgrep -x dunst >/dev/null && notify-send "🔋 Battery module" "🔋: discharging
+🛑: not charging
+♻: stagnant charge
+🔌: charging
+⚡: charged
+❗: battery very low!" ;;
+esac
+
+# Loop through all attached batteries.
+for battery in /sys/class/power_supply/BAT?
+do
+	# Get its remaining capacity and charge status.
+	capacity=$(cat "$battery"/capacity)
+	status=$(sed "s/Discharging/🔋/;s/Not charging/🛑/;s/Charging/🔌/;s/Unknown/♻️/;s/Full/⚡/" "$battery"/status)
+
+	# If it is discharging and 25% or less, we will add a ❗ as a warning.
+	 [ "$capacity" -le 25 ] && [ "$status" = "🔋" ] && warn="❗"
+
+	printf "%s%s%s%%\n" "$status" "$warn" "$capacity"
+	unset warn
+done
