@@ -116,6 +116,8 @@ ln -s "$HOME/dotfiles/sxiv/" ~/.config/
 ln -s "$HOME/dotfiles/vifm/" ~/.config/
 ln -s ~/dotfiles/rofi ~/.config/rofi
 ln -s ~/dotfiles/dunst ~/.config/dunst
+ln -s ~/dotfiles/local/bin ~/.local/
+ln -s ~/dotfiles/zsh/zprofile ~/.zprofile
 
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 

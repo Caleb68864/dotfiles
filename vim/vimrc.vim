@@ -198,3 +198,4 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " Future stuff
 	"Swap line
 	"Insert blank below and above
+autocmd BufWritePost ~/dotfiles/dwmblocks/config.h !cd ~/dotfiles/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }

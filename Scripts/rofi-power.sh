@@ -29,15 +29,15 @@ then
         eval $1
         ;;
       Reboot)
-        shutdown -r now
-        systemctl reboot
         reboot
+        systemctl reboot
+        shutdown -r now
         sudo shutdown -r now
         ;;
       Power-off)
-        shutdown -h now
-        systemctl poweroff
         poweroff
+        systemctl poweroff
+        shutdown -h now
         sudo shutdown -h now
         ;;
       Suspend)
