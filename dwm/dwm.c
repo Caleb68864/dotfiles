@@ -735,12 +735,12 @@ cyclelayout(const Arg *arg) {
 	}
 }
 
-/*void
+void
 cycle(const Arg *arg) {
     const Arg a = { .i = shifttag(arg->i) };
 
     view(&a);
-}*/
+}
 
 void
 destroynotify(XEvent *e)
