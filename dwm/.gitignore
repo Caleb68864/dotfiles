@@ -1,1 +1,9 @@
-*.o
+.gitignore
+*.orig
+*.rej
+larbs.pdf
+patches
+util.o
+dwm
+dwm.o
+drw.o
