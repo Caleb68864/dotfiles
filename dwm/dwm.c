@@ -1872,14 +1872,14 @@ tag(const Arg *arg)
 	}
 }
 
-/*void
+void
 tagcycle(const Arg *arg) {
     const Arg a = { .i = shifttag(arg->i) };
 
     tag(&a);
     view(&a);
 
-}*/
+}
 
 void
 tagmon(const Arg *arg)
