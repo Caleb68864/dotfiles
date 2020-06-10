@@ -132,11 +132,13 @@ static const char *remminacmd[]  = { "remmina", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
+/*
 static const char *volupcmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *voldwncmd[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
 static const char *volmutecmd[]  = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *brightupcmd[]  = { "xbacklight", "-inc", "10", NULL };
 static const char *brightdwncmd[]  = { "xbacklight", "-dec", "10", NULL };
+*/
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "-e", "tmux", "attach-session", "-t", "ScratchPad", NULL };
 static const char *powercmd[]  = { "/home/caleb/dotfiles/Scripts/rofi-power.sh", NULL };
