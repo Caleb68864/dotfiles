@@ -1779,9 +1779,9 @@ seturgent(Client *c, int urg)
 shifttag(int dist){
     int seltags = selmon->tagset[selmon->seltags] & TAGMASK;
 
-    if(dist >0) /* left circular shift */
+    if(dist >0) // left circular shift 
         seltags = (seltags << dist) | (seltags >> (LENGTH(tags) - dist));
-    else /* right circular shift */
+    else // right circular shift 
         seltags = (seltags >> (- dist)) | (seltags << (LENGTH(tags) + dist));
     return seltags;
 
