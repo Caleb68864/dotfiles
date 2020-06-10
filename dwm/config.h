@@ -90,10 +90,14 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "[M]",      monocle }, /* All windows on top of eachother */
+	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
 	{ "[=||=]",   tcl },
 	{ "[+]",      grid },
-	{ "TTT",      bstack },
+	{ "TTT",      bstack },  /* Master on top, slaves on bottom */
+	{ "[@]",	spiral },		/* Fibonacci spiral */
+	{ "H[]",	deck },			/* Master on left, slaves in monocle-like mode on right */
+	{ "[\\]",	dwindle },		/* Decreasing in size right and leftward */
 	{ "===",      bstackhoriz },
 	{ NULL,       NULL },
 };
