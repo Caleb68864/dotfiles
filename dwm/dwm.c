@@ -1775,7 +1775,7 @@ seturgent(Client *c, int urg)
 	XFree(wmh);
 }
 
-int
+/*int
 shifttag(int dist){
     int seltags = selmon->tagset[selmon->seltags] & TAGMASK;
 
@@ -1785,7 +1785,7 @@ shifttag(int dist){
         seltags = (seltags >> (- dist)) | (seltags << (LENGTH(tags) + dist));
     return seltags;
 
-}
+}*/
 
 void
 showhide(Client *c)
@@ -1856,7 +1856,7 @@ tagmon(const Arg *arg)
 	sendmon(selmon->sel, dirtomon(arg->i));
 }
 
-void
+/*void
 tile(Monitor *m)
 {
 	unsigned int i, n, h, mw, my, ty;
@@ -1880,7 +1880,7 @@ tile(Monitor *m)
 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
 			ty += HEIGHT(c);
 		}
-}
+}*/
 
 void
 togglebar(const Arg *arg)
@@ -2393,7 +2393,7 @@ main(int argc, char *argv[])
 	return EXIT_SUCCESS;
 }
 
-static void
+/*static void
 bstack(Monitor *m) {
 	int w, h, mh, mx, tx, ty, tw;
 	unsigned int i, n;
@@ -2423,7 +2423,7 @@ bstack(Monitor *m) {
 				tx += WIDTH(c);
 		}
 	}
-}
+}*/
 
 static void
 bstackhoriz(Monitor *m) {
