@@ -11,7 +11,7 @@
     alias pmR="sudo pacman -Rs"
     alias yays="yay -Ss"
     alias yayS="yay -S"
-    alias pmUP="pmu & pmup & yay -Syu"
+    alias pmUP="pmu && pmup && yay -Syu"
     alias sc_stop="sudo systemctl stop"
     alias sc_start="sudo systemctl start"
     alias sc_enable="sudo systemctl enable"
