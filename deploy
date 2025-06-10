@@ -4,8 +4,8 @@
 
 set -euo pipefail
 
-# ╭──────────────────────── Colours ────────────────────────╮
-NC='\033[0m'   # reset
+# ──────────────── fancy colours ────────────────
+NC='\033[0m'   # reset / normal
 GRN='\033[0;32m'
 BLU='\033[0;34m'
 RED='\033[0;31m'
@@ -16,7 +16,7 @@ good()  { printf "${GRN}✔ %s${NC}\n" "$1"; }
 warn()  { printf "${YEL}⚠ %s${NC}\n" "$1"; }
 error() { printf "${RED}✖ %s${NC}\n" "$1"; }
 
-# ╭────────────────── Detect package manager ───────────────╮
+# ───────── detect package manager ──────────────
 detect_pm() {
   if   command -v apt >/dev/null     ; then PM_CMD="sudo apt -y install"
   elif command -v pacman >/dev/null  ; then PM_CMD="sudo pacman -S --noconfirm"
@@ -30,7 +30,7 @@ detect_pm() {
   good "Using package manager: ${PM_CMD%% *}"
 }
 
-# ╭────────────────────── Helpers ──────────────────────────╮
+# ───────── helpers ─────────────────────────────
 prompt_yes() {
   read -rp "$(printf "${BLU}%s (y/N) ${NC}" "$1")" ans
   [[ "${ans,,}" == y* ]]
@@ -54,14 +54,14 @@ install_if_missing() {
 
 backup_dot() {
   local file=$1
-  [[ -f $file || -h $file ]] || return
+  [[ -f $file || -h $file ]] || return       # nothing to back up
   local ts
   ts=$(date +%Y%m%d_%H%M%S)
   mv "$file" "${file}.bak_${ts}"
   good "Backed up $file → ${file}.bak_${ts}"
 }
 
-# ╭────────────────────── Main ─────────────────────────────╮
+# ───────── main ────────────────────────────────
 say "🚀  Welcome to the dot-file deploy script!"
 
 detect_pm
@@ -71,7 +71,7 @@ REQUIRED_PKGS=( zsh neovim tmux git yt-dlp )
 say "🔎  Checking required software…"
 for p in "${REQUIRED_PKGS[@]}"; do install_if_missing "$p"; done
 
-# ── default shell ─────────────────────────────────────────
+# ─ default shell ───────────────────────────────
 if [[ $SHELL != *zsh ]]; then
   if prompt_yes "Switch default shell to zsh?"; then
     chsh -s "$(command -v zsh)"
@@ -83,10 +83,10 @@ else
   good "Default shell already zsh."
 fi
 
-# ── dot-file paths ────────────────────────────────────────
+# ─ dot-file paths ──────────────────────────────
 DOTFILES_DIR="$HOME/dotfiles"
 
-say "🗂  Setting up symlinks & backing up existing dot-files…"
+say "🗂  Backing up existing dot-files & creating symlinks…"
 backup_dot ~/.zshrc
 backup_dot ~/.zprofile
 backup_dot ~/.tmux.conf
@@ -95,7 +95,14 @@ backup_dot ~/.config/nvim/init.lua
 
 mkdir -p ~/.config/nvim ~/.local/share/fonts ~/.local/bin
 
-# ── sanity-check: abort if the target is missing ──────────────────────────
+ln -sf "$DOTFILES_DIR/zsh/zshrc_manager.sh" ~/.zshrc
+ln -sf "$DOTFILES_DIR/zsh/zprofile"         ~/.zprofile
+ln -sf "$DOTFILES_DIR/tmux/tmux.conf"       ~/.tmux.conf
+
+# Neovim config
+ln -sf "$DOTFILES_DIR/vim/vimrc.vim"        ~/.config/nvim/init.vim
+
+# ─ sanity-check ~/.zshrc ───────────────────────
 if [[ ! -s ~/.zshrc ]]; then
   warn "~/.zshrc symlink missing or empty – creating fallback stub."
   cat <<'EOF' > ~/.zshrc
@@ -105,14 +112,9 @@ export PATH="$HOME/.local/bin:$PATH"
 EOF
 fi
 
-ln -sf "$DOTFILES_DIR/tmux/tmux.conf"      ~/.tmux.conf
-
-# Neovim config
-ln -sf "$DOTFILES_DIR/vim/vimrc.vim"       ~/.config/nvim/init.vim
-
-# ── yt-dl/yt-dlp config mirroring ─────────────────────────
+# ─ yt-dlp config mirroring ─────────────────────
 mkdir -p ~/.config
-ln -snf "$DOTFILES_DIR/youtube-dl" ~/.config/youtube-dl  # canonical location
+ln -snf "$DOTFILES_DIR/youtube-dl" ~/.config/youtube-dl  # canonical home
 
 mkdir -p ~/.config/yt-dlp
 if command -v rsync >/dev/null 2>&1; then
@@ -123,14 +125,14 @@ else
 fi
 good "Synced youtube-dl settings into yt-dlp."
 
-# ── extra goodies ─────────────────────────────────────────
+# ─ extras (fonts, local bin) ───────────────────
 ln -snf "$DOTFILES_DIR/local/bin" ~/.local/bin
 ln -snf "$DOTFILES_DIR/fonts"     ~/.local/share/
 
 fc-cache -f >/dev/null || true
 
-# Git identity (edit to taste)
+# Git identity (customise if needed)
 git config --global user.name  "Caleb Bennett"
 git config --global user.email "cbennett68864@gmail.com"
 
-say "🎉  All set!  Log out & back in (or \`exec zsh\`) and enjoy your shiny new setup."
+say "🎉  All set! Log out & back in (or run \`exec zsh\`) to enjoy your new setup."
